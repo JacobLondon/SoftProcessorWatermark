@@ -5,7 +5,7 @@ import cv2, copy
 Requirements:
 anaconda, python3
 matplotlib
-opencv (conda install)
+opencv (conda install) (opencv-python)
 
 Info:
 Image watermarking occurs with an input and watermark image.
@@ -37,7 +37,7 @@ for y in range(h):
             # get rgba of original pixel so it can be averaged
             o_rgba = original[x, y]
             # average each pixel's (r,g,b,a)
-            output[x, y] = [o_rgba[i] * w_rgba[i] / 2 for i in range(len(o_rgba))]
+            output[x, y] = [(o_rgba[i] * w_rgba[i]) / 2 for i in range(len(o_rgba))]
         
 
 # display the watermarked image
