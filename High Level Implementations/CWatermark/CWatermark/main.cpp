@@ -41,6 +41,10 @@ int main(int argc, char** argv)
 
 	cv::Vec4b oRGBA, wRGBA, cRGBA;
 
+	cv::Vec4b* orig_ptr = original.ptr<cv::Vec4b>();
+	cv::Vec4b* wat_ptr = watermark.ptr<cv::Vec4b>();
+	cv::Vec4b* copy_ptr = copy.ptr<cv::Vec4b>();
+
 	// loop over the original pixel by pixel
 	for (int i = 0; i < cols; i++)
 		for (int j = 0; j < rows; j++)
@@ -48,20 +52,24 @@ int main(int argc, char** argv)
 			// get rgba to check if the watermark has alpha+
 			wRGBA = watermark.at<cv::Vec4b>(cv::Point(i, j));
 
-			if (wRGBA[vals - 1] != 0)
-			{
-				// get rgb of original pixel so it can be averaged
-				oRGBA = original.at<cv::Vec4b>(cv::Point(i, j));
-				cRGBA = copy.at<cv::Vec4b>(cv::Point(i, j));
+			// get rgb of original pixel so it can be averaged
+			oRGBA = original.at<cv::Vec4b>(cv::Point(i, j));
+			cRGBA = copy.at<cv::Vec4b>(cv::Point(i, j));
 
-				// modify the rgba
-				for (int k = 0; k < vals; k++)
-					cRGBA[k] = (oRGBA[k] + wRGBA[k]) / 2;
+			// modify the rgba
+			for (int k = 0; k < vals; k++)
+				cRGBA[k] = (oRGBA[k] + wRGBA[k]) / 2;
 
-				copy.at<cv::Vec4b>(cv::Point(i, j)) = cRGBA;
-			}
+			copy.at<cv::Vec4b>(cv::Point(i, j)) = cRGBA;
+
+			 
 		}
-		
+
+	// loop over the original pixel by pixel
+	//for (int i = 0; i < rows; i++)
+	//	for (int j = 0; j < cols; j++)
+	//		for (int k = 0; k < vals; k++)
+	//			copy_ptr[i*rows + j][k] = (orig_ptr[i*rows + j][k] + wat_ptr[i*rows + j][k]) / 2;
 	
 	// save the output
 	cv::imwrite(outpath, copy);
