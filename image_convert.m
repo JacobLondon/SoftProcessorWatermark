@@ -1,8 +1,11 @@
+input_name = 'name_in.png'
+output_name = 'name_out.rgb'
+
 % read the image
-I = imread('0.png');	
+I = imread(input_name);	
 imshow(I);
 		
-% Extract RED, GREEN and BLUE components from the image
+% extract RED, GREEN and BLUE components from the image
 R = I(:, :, 1);
 G = I(:, :, 2);
 B = I(:, :, 3);
@@ -12,18 +15,18 @@ R = R./16; % 8 bits -> 4 bits
 G = G./16; % 8 bits -> 4 bits
 B = B./16; % 8 bits -> 4 bits
 
-% tranlate to integer
+% translate to integer
 R = uint8(R); % float -> uint8
 G = uint8(G);
 B = uint8(B);
 
-% minus one cause sometimes conversion to integers rounds up the numbers wrongly
+% fix possible rounding error
 R = R - 1; 
 G = G - 1;
 B = B - 1; 
 
-% save variable COLOR to a file in HEX format for the chip to read
-fileID = fopen ('0.rgb', 'w');
+% save variable COLOR to a file in HEX format
+fileID = fopen (output_name, 'w');
 for i = 1:size(R(:), 1) - 1
     % COLOR (dec) -> print to file (hex)
     fprintf (fileID, '%x%x%x\n', B(i), G(i), R(i));
