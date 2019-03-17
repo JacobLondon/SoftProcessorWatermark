@@ -1,5 +1,5 @@
-input_name = 'name_in.png'
-output_name = 'name_out.rgb'
+input_name = 'water2.jpg'
+output_name = 'water2.rgb'
 
 % read the image
 I = imread(input_name);	
