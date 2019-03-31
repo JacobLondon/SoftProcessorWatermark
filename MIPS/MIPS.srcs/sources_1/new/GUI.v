@@ -9,8 +9,8 @@ module GUI(
     
     reg DOWNCOUNTER1 = 0;       // reduce clk to 25 MHz
     reg DOWNCOUNTER2 = 0;       // reduce clk to 50 MHz
-    parameter Size = 12'd4096;  // images are 64x64 pixels = 4096
-    parameter SizeXY = 6'd64;   // images have 64 pixels per row/col
+    parameter Size = 13'd4096;  // images are 64x64 pixels = 4096
+    parameter SizeXY = 7'd64;   // images have 64 pixels per row/col
     
     // slow counter to 50 MHz
     always @(posedge CLK) begin
@@ -18,7 +18,7 @@ module GUI(
     end
     
     // slow counter to 25MHz
-    always @ (posedge CLK) begin
+    always @ (posedge DOWNCOUNTER2) begin
         DOWNCOUNTER1 <= ~DOWNCOUNTER1;
     end
     

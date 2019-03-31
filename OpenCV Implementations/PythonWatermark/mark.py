@@ -15,7 +15,7 @@ The watermark will be applied on the original where the alpha channel is not cle
 
 # open original and watermark with rgba
 original = cv2.imread('image2.png', cv2.IMREAD_UNCHANGED)
-watermark = cv2.imread('watermark3.png', cv2.IMREAD_UNCHANGED)
+watermark = cv2.imread('image3.png', cv2.IMREAD_UNCHANGED)
 # copy the original to not modify it for the output
 output = copy.deepcopy(original)
 
@@ -37,7 +37,7 @@ for y in range(h):
             # get rgba of original pixel so it can be averaged
             o_rgba = original[x, y]
             # average each pixel's (r,g,b,a)
-            output[x, y] = [(o_rgba[i] * w_rgba[i]) / 2 for i in range(len(o_rgba))]
+            output[x, y] = [(o_rgba[i] + w_rgba[i]) / 2 for i in range(len(o_rgba))]
         
 
 # display the watermarked image
