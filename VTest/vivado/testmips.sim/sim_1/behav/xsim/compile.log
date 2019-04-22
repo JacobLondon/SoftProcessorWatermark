@@ -1,0 +1,28 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/clock.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Clock
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/instruction_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/logic_gates.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module And
+INFO: [VRFC 10-311] analyzing module Or
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/program_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-311] analyzing module ProgramCounterHelper
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FullAdder
+INFO: [VRFC 10-311] analyzing module RippleCarryAdder
+INFO: [VRFC 10-311] analyzing module RippleCarrySubtractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/sign_extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignExtend
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/split.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Split
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/mips.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MipsProcessor
+INFO: [VRFC 10-2458] undeclared symbol clk, assumed default net type wire [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/mips.v:29]
+INFO: [VRFC 10-2458] undeclared symbol rw, assumed default net type wire [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/mips.v:34]

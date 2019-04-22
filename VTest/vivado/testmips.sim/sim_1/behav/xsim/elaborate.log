@@ -1,0 +1,59 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 33a31d0a30644fc18f75cb1475dd9282 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MipsProcessor_behav xil_defaultlib.MipsProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:81]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:82]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:83]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:84]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:85]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:86]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:87]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:88]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:89]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:90]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:91]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:92]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:93]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:94]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:95]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:96]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:97]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:98]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:99]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:100]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:101]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:102]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:103]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:104]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:105]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:106]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:107]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:108]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:109]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:110]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:111]
+WARNING: [VRFC 10-277] actual bit length 32 differs from formal bit length 1 [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:112]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'cin' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/ripple_carry_add_sub.v:114]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Clock
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.ProgramCounterHelper
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.InstructionMemory
+Compiling module xil_defaultlib.DataMemory
+Compiling module xil_defaultlib.Split
+Compiling module xil_defaultlib.FullAdder
+Compiling module xil_defaultlib.RippleCarryAdder
+Compiling module xil_defaultlib.RippleCarrySubtractor
+Compiling module xil_defaultlib.And
+Compiling module xil_defaultlib.Or
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.SignExtend
+Compiling module xil_defaultlib.MipsProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MipsProcessor_behav

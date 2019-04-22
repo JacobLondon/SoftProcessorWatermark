@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../alu.v" \
+"../../../../../clock.v" \
+"../../../../../data_memory.v" \
+"../../../../../instruction_memory.v" \
+"../../../../../logic_gates.v" \
+"../../../../../program_counter.v" \
+"../../../../../register.v" \
+"../../../../../ripple_carry_add_sub.v" \
+"../../../../../sign_extend.v" \
+"../../../../../split.v" \
+"../../../../../mips.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

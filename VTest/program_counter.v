@@ -20,15 +20,14 @@ endmodule
 
 
 // module for controlling jumping or going to the next instruction
-module ProgramCounterHelper(nextPC, pc, jumpExtendAddress, branchSignal);
+module ProgramCounterHelper(newpc, pc, extendaddr, chksignal);
 
 input [31:0] pc;
-input [31:0] jumpExtendAddress;
-input branchSignal;
+input [31:0] extendaddr;
+input chksignal;
 
-output [31:0] nextPC
+output [31:0] newpc;
 
-// go to jump location or continue to next instruction
-assign nextPC = branchSignal ? (pc + jumpExtendAddress) : (pc + 1);
+assign newpc = (chksignal) ? (pc + extendaddr) : (pc + 1);
 
 endmodule

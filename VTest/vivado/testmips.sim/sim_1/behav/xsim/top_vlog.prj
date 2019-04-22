@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/adder.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/alu.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/clock.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/datamemory.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/gates.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/instructionmemory.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/pc.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/registerfile.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/signextendshift.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/splitter.v" \
+"../../../../../../../Repos/g-karthik-32BitMIPSProcessor-6a1e81b/tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

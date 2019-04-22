@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 
 module RegisterFile(
-    write,
+    readwrite,
     address1,
     address2,
-    address3,
     valRead1,
     valRead2,
+    address3,
     valWrite3,
     clk
 );

@@ -1,0 +1,13 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+pc =     0 | inst=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | in1 =     0 | in2 =     0 | result = x | time=    0 | clk =     0
+pc =     0 | inst=00000000000000010001000000100010 | in1 =     0 | in2 =     0 | result = x | time=    1 | clk =     1
+pc =     0 | inst=00000000000000010001000000100010 | in1 =     0 | in2 =     0 | result = x | time=    2 | clk =     0
+pc =     0 | inst=00000000000000010001000000100010 | in1 =     0 | in2 =     0 | result = x | time=    3 | clk =     1
+pc =     0 | inst=00000000000000010001000000100010 | in1 =     0 | in2 =     0 | result = x | time=    4 | clk =     0
+pc =     0 | inst=00000000000000010001000000100010 | in1 =     0 | in2 =     0 | result = x | time=    5 | clk =     1
+pc =     0 | inst=00000000000000010001000000100010 | in1 =     0 | in2 =     0 | result = x | time=    6 | clk =     0
+pc =     0 | inst=00000000000000010001000000100010 | in1 =     0 | in2 =     0 | result = x | time=    7 | clk =     1
+pc =     0 | inst=00000000000000010001000000100010 | in1 =     0 | in2 =     0 | result = x | time=    8 | clk =     0
+pc =     0 | inst=00000000000000010001000000100010 | in1 =     0 | in2 =     0 | result = x | time=    9 | clk =     1
+$finish called at time : 10 ns : File "C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/VTest/mips.v" Line 107
