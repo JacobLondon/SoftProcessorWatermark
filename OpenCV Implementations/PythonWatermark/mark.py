@@ -1,3 +1,4 @@
+# requires matplotlib and opencv
 import matplotlib.pyplot as plt
 import cv2, copy
 
