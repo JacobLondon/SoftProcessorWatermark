@@ -1,10 +1,7 @@
 `timescale 1ns / 1ps
 
-/*
-Generate a clock signal
-*/
+// generate a clock signal for the processor
 module Clock(clk);
-
 output clk;
 reg    clk;
 
@@ -15,5 +12,5 @@ end
 always begin
     clk = #1 ~clk;
 end
-
 endmodule
+

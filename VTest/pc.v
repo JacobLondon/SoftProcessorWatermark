@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 // base program counter module
-module ProgramCounter(pc, in, clk);
+module PC(pc, in, clk);
 
 input [31:0] in;
 input clk;
@@ -20,7 +20,7 @@ endmodule
 
 
 // module for controlling jumping or going to the next instruction
-module ProgramCounterHelper(newpc, pc, extendaddr, chksignal);
+module PC_ALU(newpc, pc, extendaddr, chksignal);
 
 input [31:0] pc;
 input [31:0] extendaddr;
@@ -31,3 +31,4 @@ output [31:0] newpc;
 assign newpc = (chksignal) ? (pc + extendaddr) : (pc + 1);
 
 endmodule
+

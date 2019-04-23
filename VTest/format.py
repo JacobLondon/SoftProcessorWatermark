@@ -6,6 +6,6 @@ initialize = '0'
 output = ''
 
 for increment in range(size):
-    output += f'rmemory[{increment}] = {str_size}' + (initialize * size) + ';\n'
+    output += f'regmem[{increment}] = {str_size}' + (initialize * size) + ';\n'
 
 print(output)
