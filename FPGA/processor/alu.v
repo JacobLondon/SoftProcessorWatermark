@@ -1,10 +1,11 @@
 `timescale 1ns / 1ps
 
 // perform all operations given opcodes / functions
-module ALU(opcode, funct, in1, in2, result, rw, clk);
+module ALU(opcode, shamt, funct, in1, in2, result, rw, clk);
 
 input clk;
 input [5:0] opcode;
+input [4:0] shamt;
 input [5:0] funct;
 input [31:0] in1;
 input [31:0] in2;
@@ -21,12 +22,15 @@ wire [31:0] sum;
 wire [31:0] diff;
 wire [31:0] and_;
 wire [31:0] or_;
+wire [31:0] lsr_;
 
 // modules to perform the operations
 RippleCarryAdder add_op(in1, in2, carryout, sum, 1'b0);
 RippleCarrySubtractor sub_op(in1, in2, carry, diff, 1'b0);
 AND and_op(in1, in2, and_);
 OR or_op(in1, in2, or_);
+// in2 is Rt
+ShiftRight lsr_op(in2, shamt, lsr_);
 
 /*
 perform given opcodes
@@ -64,9 +68,15 @@ always @(*) begin
             rw = 1'b1;
         end
         // OR
-        if(funct==6'b100101) begin
+        if(funct == 6'b100101) begin
             rw = 1'b0;
             result = or_;
+            rw = 1'b1;
+        end
+        // SRL, Logical shift right
+        if(funct == 6'b000010) begin
+            rw = 1'b0;
+            result = lsr_;
             rw = 1'b1;
         end
     end

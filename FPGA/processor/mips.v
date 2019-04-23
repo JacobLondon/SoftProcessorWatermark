@@ -11,6 +11,7 @@ reg [31:0] in;
 reg [31:0] address;
 
 wire [5:0] opcode;
+wire [4:0] shamt;
 wire [5:0] funct;
 wire [31:0] pc;
 wire [31:0] inst;
@@ -37,9 +38,9 @@ RegisterFile register_file(rw, rs, rt, Rs, Rt, addr3, data3, clk, regout);
 InstructionMemory inst_mem(inst, pc, clk);
 DataMemory data_mem(opcode, Rt, address, clk, out);
 // split instructions based on R, I, J type
-Splitter split(inst, opcode, rs, rt, rd, funct, addr);
+Splitter split(inst, opcode, rs, rt, rd, shamt, funct, addr);
 // perform operations based on opcode
-ALU alu_(opcode, funct, in1, in2, result, rw, clk);
+ALU alu_(opcode, shamt, funct, in1, in2, result, rw, clk);
 // extend sign of the address
 SignExtend sign_extend(addr, extendaddr);
 
@@ -48,11 +49,12 @@ always @(*) begin
 
     // ALU operation
     if(opcode == 6'b000000) begin
-        // if ADD, SUB, AND, OR
+        // if ADD, SUB, AND, OR, LSR
         if(funct == 6'b100000
             || funct == 6'b100010
             || funct == 6'b100100
-            || funct==6'b100101)
+            || funct == 6'b100101
+            || funct == 6'b000010)
         begin
             // perform the R operation
             in1 = Rs;
@@ -66,34 +68,34 @@ always @(*) begin
     end
 
     // LW, load word
-    if(opcode==6'b100011) begin
-        in1=Rs;
-        in2=extendaddr;
-        address=result;
-        addr3=rt;
-        data3=out;
-        chksignal=1'b0;
-        in=newpc;
+    if(opcode == 6'b100011) begin
+        in1 = Rs;
+        in2 = extendaddr;
+        address = result;
+        addr3 = rt;
+        data3 = out;
+        chksignal = 1'b0;
+        in = newpc;
     end
 
     // SW, store word
-    if(opcode==6'b101011) begin
-        in1=Rs;
-        in2=extendaddr;
-        address=result;
-        chksignal=1'b0;
-        in=newpc;
+    if(opcode == 6'b101011) begin
+        in1 = Rs;
+        in2 = extendaddr;
+        address = result;
+        chksignal = 1'b0;
+        in = newpc;
     end
 
     // BEQ, branch on equals
-    if(opcode==6'b000100) begin
-        in1=Rs;
-        in2=Rt;
+    if(opcode == 6'b000100) begin
+        in1 = Rs;
+        in2 = Rt;
 
         // if EQ, then jump
-        if(result==32'b00000000000000000000000000000000) begin
-            chksignal=1'b1;
-            in=newpc;
+        if(result == 32'b00000000000000000000000000000000) begin
+            chksignal = 1'b1;
+            in = newpc;
         end
     end
 

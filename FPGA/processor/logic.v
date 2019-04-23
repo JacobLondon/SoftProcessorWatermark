@@ -83,3 +83,15 @@ or o31(out[31],in1[31],in2[31]);
 
 endmodule
 
+
+// shift right in1 to output
+module ShiftRight(in1, shamt, out);
+
+input [31:0] in1;
+input [4:0] shamt;
+
+output [31:0] out;
+
+assign out = (in1 >> shamt);
+
+endmodule
