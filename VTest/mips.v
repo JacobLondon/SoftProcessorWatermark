@@ -25,13 +25,15 @@ wire [31:0] out;
 wire [31:0] extendaddr;
 wire [31:0] newpc;
 
+wire [31:0] regout;
+
 // generate a clock waveform
 Clock CLK(clk);
 // increment pc and control jumping
 PC pc_(pc, in, clk);
 PC_ALU pc_alu(newpc, pc, extendaddr, chksignal);
 // memory for registers, instructions, and data
-RegisterFile register_file(rw, rs, rt, Rs, Rt, addr3, data3, clk);
+RegisterFile register_file(rw, rs, rt, Rs, Rt, addr3, data3, clk, regout);
 InstructionMemory inst_mem(inst, pc, clk);
 DataMemory data_mem(opcode, Rt, address, clk, out);
 // split instructions based on R, I, J type
@@ -97,8 +99,12 @@ always @(*) begin
 
 end
 
+/*
+TEST VARS:
+regout
+*/
 initial begin
-    $monitor("pc = %5d inst=%b in1 = %5d in2 = %5d result = %5d time=%5d clk = %5d", pc, inst, in1, in2, result, $time, clk);
+    $monitor("pc = %5d | inst=%b | in1 = %5d | in2 = %5d | result = %5d | time=%5d | clk = %5d | regout = %12d", pc, inst, in1, in2, result, $time, clk, regout);
     #10
     $finish;
 end
