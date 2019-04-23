@@ -1,5 +1,5 @@
 input_name = 'water2.jpg'
-output_name = 'water2.rgb'
+output_name = 'water2.mem'
 
 % read the image
 I = imread(input_name);	
