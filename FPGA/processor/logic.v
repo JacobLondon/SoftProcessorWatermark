@@ -85,13 +85,26 @@ endmodule
 
 
 // shift right in1 to output
-module ShiftRight(in1, shamt, out);
+module ShiftRight(in2, shamt, out);
 
-input [31:0] in1;
+input [31:0] in2;
 input [4:0] shamt;
 
 output [31:0] out;
 
-assign out = (in1 >> shamt);
+assign out = (in2 >> shamt);
+
+endmodule
+
+
+// shift left in2 to output
+module ShiftLeft(in2, shamt, out);
+
+input [31:0] in2;
+input [4:0] shamt;
+
+output [31:0] out;
+
+assign out = (in2 << shamt);
 
 endmodule

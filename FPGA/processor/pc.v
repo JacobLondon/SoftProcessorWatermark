@@ -28,7 +28,7 @@ input chksignal;
 
 output [31:0] newpc;
 
-assign newpc = (chksignal) ? (pc + extendaddr) : (pc + 1);
+assign newpc = (chksignal) ? (extendaddr) : (pc + 1);
 
 endmodule
 

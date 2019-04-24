@@ -22,7 +22,8 @@ wire [31:0] sum;
 wire [31:0] diff;
 wire [31:0] and_;
 wire [31:0] or_;
-wire [31:0] lsr_;
+wire [31:0] srl_;
+wire [31:0] sll_;
 
 // modules to perform the operations
 RippleCarryAdder add_op(in1, in2, carryout, sum, 1'b0);
@@ -30,7 +31,8 @@ RippleCarrySubtractor sub_op(in1, in2, carry, diff, 1'b0);
 AND and_op(in1, in2, and_);
 OR or_op(in1, in2, or_);
 // in2 is Rt
-ShiftRight lsr_op(in2, shamt, lsr_);
+ShiftRight srl_op(in2, shamt, srl_);
+ShiftLeft  sll_op(in2, shamt, sll_);
 
 /*
 perform given opcodes
@@ -73,10 +75,16 @@ always @(*) begin
             result = or_;
             rw = 1'b1;
         end
-        // SRL, Logical shift right
+        // SRL, Shift right logical
         if(funct == 6'b000010) begin
             rw = 1'b0;
-            result = lsr_;
+            result = srl_;
+            rw = 1'b1;
+        end
+        // SLL, Shift left logical
+        if(funct == 6'b000000) begin
+            rw = 1'b0;
+            result = sll_;
             rw = 1'b1;
         end
     end
@@ -92,6 +100,7 @@ always @(*) begin
     if(opcode == 6'b101011) begin
         rw = 1'b0;
         result = sum;
+        
     end
 
     // BEQ, branch on equals

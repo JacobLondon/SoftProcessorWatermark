@@ -49,12 +49,13 @@ always @(*) begin
 
     // ALU operation
     if(opcode == 6'b000000) begin
-        // if ADD, SUB, AND, OR, LSR
-        if(funct == 6'b100000
-            || funct == 6'b100010
-            || funct == 6'b100100
-            || funct == 6'b100101
-            || funct == 6'b000010)
+        // functions' opcodes
+        if(funct == 6'b100000       // ADD
+            || funct == 6'b100010   // SUB
+            || funct == 6'b100100   // AND
+            || funct == 6'b100101   // OR
+            || funct == 6'b000010   // LSR
+            || funct == 6'b000000)  // LSL
         begin
             // perform the R operation
             in1 = Rs;
@@ -107,7 +108,7 @@ regout
 */
 initial begin
     $monitor("pc = %5d | inst=%b | in1 = %5d | in2 = %5d | result = %5d | time=%5d | clk = %5d | regout = %12d", pc, inst, in1, in2, result, $time, clk, regout);
-    #10
+    #30
     $finish;
 end
 
