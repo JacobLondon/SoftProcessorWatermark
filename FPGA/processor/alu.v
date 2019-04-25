@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 // perform all operations given opcodes / functions
-module ALU(opcode, shamt, funct, in1, in2, result, rw, clk);
+module ALU(opcode, shamt, funct, in1, in2, result, rw, clk, difference);
 
 input clk;
 input [5:0] opcode;
@@ -12,6 +12,8 @@ input [31:0] in2;
 
 output [31:0] result;
 reg    [31:0] result;
+
+output [31:0] difference;
 
 // same as register's rw, read == 0, write == 1
 output rw;
@@ -24,6 +26,8 @@ wire [31:0] and_;
 wire [31:0] or_;
 wire [31:0] srl_;
 wire [31:0] sll_;
+
+assign difference = diff;
 
 // modules to perform the operations
 RippleCarryAdder add_op(in1, in2, carryout, sum, 1'b0);

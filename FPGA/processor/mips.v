@@ -28,6 +28,7 @@ wire [31:0] newpc;
 
 wire [31:0] regout1;
 wire [31:0] regout2;
+wire [31:0] difference;
 
 // generate a clock waveform
 Clock CLK(clk);
@@ -41,7 +42,7 @@ DataMemory data_mem(opcode, Rt, address, clk, out);
 // split instructions based on R, I, J type
 Splitter split(inst, opcode, rs, rt, rd, shamt, funct, addr);
 // perform operations based on opcode
-ALU alu_(opcode, shamt, funct, in1, in2, result, rw, clk);
+ALU alu_(opcode, shamt, funct, in1, in2, result, rw, clk, difference);
 // extend sign of the address
 SignExtend sign_extend(addr, extendaddr);
 
@@ -70,7 +71,7 @@ always @(*) begin
     end
 
     // LW, load word
-    if(opcode == 6'b100011) begin
+    else if(opcode == 6'b100011) begin
         in1 = Rs;
         in2 = extendaddr;
         address = result;
@@ -81,7 +82,7 @@ always @(*) begin
     end
 
     // SW, store word
-    if(opcode == 6'b101011) begin
+    else if(opcode == 6'b101011) begin
         in1 = Rs;
         in2 = extendaddr;
         address = result;
@@ -90,9 +91,10 @@ always @(*) begin
     end
 
     // BEQ, branch on equals
-    if(opcode == 6'b000100) begin
+    else if(opcode == 6'b000100) begin
         in1 = Rs;
         in2 = Rt;
+        chksignal = 1'b0;
 
         // if EQ, then jump
         if(result == 32'b00000000000000000000000000000000) begin
@@ -102,12 +104,14 @@ always @(*) begin
     end
 
     // BNE, branch not equals
-    if(opcode == 6'b000101) begin
+    else if(opcode == 6'b000101) begin
         in1 = Rs;
         in2 = Rt;
+        chksignal = 1'b0;
 
         // if NE, then jump
-        if(result != 32'b00000000000000000000000000000000) begin
+        // doesn't work with result, only with difference
+        if(difference != 32'b00000000000000000000000000000000) begin
             chksignal = 1'b1;
             in = newpc;
         end
@@ -120,7 +124,8 @@ TEST VARS:
 regout
 */
 initial begin
-    $monitor("pc = %5d | inst=%b | in1 = %5d | in2 = %5d | result = %12d | time=%5d | clk = %5d | regout1 = %12d | regout2 = %12d", pc, inst, in1, in2, result, $time, clk, regout1, regout2);
+    $monitor("pc = %5d | inst=%b | in1 = %5d | in2 = %5d | result = %12d | time=%5d | clk = %5d | regout1 = %12d | regout2 = %12d |",
+        pc, inst, in1, in2, result, $time, clk, regout1, regout2);
     #30
     $finish;
 end
