@@ -111,6 +111,14 @@ always @(*) begin
         end
     end
 
+    // BNE, branch not equals
+    if(opcode == 6'b000101) begin
+        rw = 1'b0;
+        if(diff != 32'b00000000000000000000000000000000) begin
+            result = diff;
+        end
+    end
+
 end
 
 endmodule

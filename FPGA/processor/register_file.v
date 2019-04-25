@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module RegisterFile(rw, addr1, addr2, out1, out2, addr3, data3, clk, regout);
+module RegisterFile(rw, addr1, addr2, out1, out2, addr3, data3, clk, regout1, regout2);
 
 input rw;           // read == 0, write == 1
 input [4:0] addr1;  // read: address of register 
@@ -15,9 +15,11 @@ input clk;
 // initialize register memory
 reg [31:0] regmem [31:0];
 
-output [31:0] regout;
+output [31:0] regout1;
+output [31:0] regout2;
 
-assign regout = regmem[12];
+assign regout1 = regmem[12];
+assign regout2 = regmem[11];
 
 initial begin
 
@@ -30,9 +32,9 @@ initial begin
     regmem[6] = 32'b00000000000000000000000000000000;
     regmem[7] = 32'b00000000000000000000000000000000;
     regmem[8] = 32'b00000000000000000000000000000000;   // $t0
-    regmem[9] = 32'b00000000000000000000000000011000;   // $t1
-    regmem[10] = 32'b00000000000000000000000000001000;  // $t2
-    regmem[11] = 32'b00000000000000000000000000001000;  // $t3
+    regmem[9] = 32'b00000000000000000000000000000001;   // $t1
+    regmem[10] = 32'b0000000000000000000000000000000;   // $t2
+    regmem[11] = 32'b0000000000000000000000000000011;   // $t3
     regmem[12] = 32'b00000000000000000000000000000000;  // $t4
     regmem[13] = 32'b00000000000000000000000000000000;  // $t5
     regmem[14] = 32'b00000000000000000000000000000000;

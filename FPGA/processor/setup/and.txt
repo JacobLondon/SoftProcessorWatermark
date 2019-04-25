@@ -1,0 +1,21 @@
+        .text
+main:
+        # setup
+        li $t1, 9               # 1001
+        li $t3, 7               # 0111
+        li $t4, 0
+
+        # program
+loop:
+        and $t4, $t3, $t1
+
+
+        # return to caller
+        jr $ra
+
+
+begin
+01696024
+end
+
+memdata[0] = 32'b00000001011010010110000000100100;

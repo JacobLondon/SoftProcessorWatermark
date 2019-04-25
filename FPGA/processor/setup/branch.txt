@@ -1,8 +1,7 @@
 
 main:
         # setup
-        li $t1, 16
-        li $t2, 0x7fffeb60
+        li $t1, 24
         li $t3, 8
         li $t4, 0
 
