@@ -1,6 +1,9 @@
 `timescale 1ns / 1ps
 
-module Processor();
+module Processor(clk, regout);
+
+input clk;
+output [11:0] regout;
 
 reg [31:0] in1;
 reg [31:0] in2;
@@ -31,7 +34,7 @@ wire [31:0] regout2;
 wire [31:0] difference;
 
 // generate a clock waveform
-Clock CLK(clk);
+//Clock CLK(clk);
 // increment pc and control jumping
 PC pc_(pc, in, clk);
 PC_ALU pc_alu(newpc, pc, extendaddr, chksignal);
@@ -45,6 +48,8 @@ Splitter split(inst, opcode, rs, rt, rd, shamt, funct, addr);
 ALU alu_(opcode, shamt, funct, in1, in2, result, rw, clk, difference);
 // extend sign of the address
 SignExtend sign_extend(addr, extendaddr);
+
+assign regout = regout1[11:0];
 
 // program loop
 always @(*) begin

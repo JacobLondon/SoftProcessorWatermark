@@ -1,0 +1,510 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Apr 25 17:04:41 2019
+| Host         : Cygnus running 64-bit major release  (build 9200)
+| Command      : report_methodology -file Graphics_methodology_drc_routed.rpt -pb Graphics_methodology_drc_routed.pb -rpx Graphics_methodology_drc_routed.rpx
+| Design       : Graphics
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 95
++-----------+----------+-----------------------------+------------+
+| Rule      | Severity | Description                 | Violations |
++-----------+----------+-----------------------------+------------+
+| TIMING-17 | Warning  | Non-clocked sequential cell | 95         |
++-----------+----------+-----------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-17#1 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/COLOR_IN_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/DOWNCOUNTER1_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#21 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#22 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#23 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#24 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#25 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/COLOR_OUT_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#26 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HS_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#27 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#28 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#29 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#30 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#31 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#32 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#33 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#34 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#35 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#36 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/HorzPix/PIXCOUNT_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#37 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#38 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#39 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#40 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#41 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#42 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#43 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#44 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#45 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#46 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TIME_COUNT_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#47 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterHorizontal/TRIGGER_OUT_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#48 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#49 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#50 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#51 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#52 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#53 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#54 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#55 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#56 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#57 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#58 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VS_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#59 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#60 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[0]_rep/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#61 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[0]_rep__0/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#62 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#63 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[1]_rep/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#64 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[1]_rep__0/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#65 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[1]_rep__1/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#66 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[1]_rep__2/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#67 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#68 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[2]_rep/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#69 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[2]_rep__0/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#70 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[2]_rep__1/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#71 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[2]_rep__2/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#72 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[2]_rep__3/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#73 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#74 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[3]_rep/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#75 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[3]_rep__0/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#76 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[3]_rep__1/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#77 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[3]_rep__2/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#78 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[3]_rep__3/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#79 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#80 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[4]_rep/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#81 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[4]_rep__0/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#82 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[4]_rep__1/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#83 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[4]_rep__2/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#84 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[4]_rep__3/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#85 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[4]_rep__4/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#86 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#87 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[5]_rep/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#88 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[5]_rep__0/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#89 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[5]_rep__1/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#90 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[5]_rep__2/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#91 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[5]_rep__3/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#92 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[5]_rep__4/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#93 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#94 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#95 Warning
+Non-clocked sequential cell  
+The clock pin GraphicsGUI/VGA/VertPix/PIXCOUNT_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+

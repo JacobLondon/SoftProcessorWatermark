@@ -1,0 +1,112 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Apr 25 17:03:50 2019
+| Host         : Cygnus running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Graphics_control_sets_placed.rpt
+| Design       : Graphics
+| Device       : xc7a100t
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    42 |
+| Unused register locations in slices containing registers |    53 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            2 |
+|      2 |            1 |
+|      4 |           32 |
+|      9 |            1 |
+|     11 |            1 |
+|     12 |            3 |
+|    16+ |            2 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              14 |            7 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              13 |            8 |
+| Yes          | No                    | No                     |              36 |           14 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              44 |           27 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+--------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+
+|  Clock Signal  |                      Enable Signal                     |                      Set/Reset Signal                     | Slice Load Count | Bel Load Count |
++----------------+--------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+
+|  DOWNCOUNTER2  | GraphicsGUI/VGA/TimeCounterHorizontal/EndHorzTrigger   | GraphicsGUI/VGA/TimeCounterVertical/TIME_COUNT_reg[3]_0   |                1 |              1 |
+|  DOWNCOUNTER2  |                                                        | GraphicsGUI/VGA/TimeCounterHorizontal/HS0                 |                1 |              1 |
+|  DOWNCOUNTER2  |                                                        |                                                           |                2 |              2 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1728_1791_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_704_767_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_832_895_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_768_831_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_64_127_9_11_i_1_n_0    |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_896_959_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_960_1023_9_11_i_1_n_0  |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1216_1279_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1280_1343_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1472_1535_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1152_1215_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_0_63_9_11_i_1_n_0      |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1024_1087_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_128_191_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1088_1151_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1408_1471_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_192_255_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_256_319_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_512_575_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1920_1983_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1664_1727_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1856_1919_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_320_383_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1600_1663_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_448_511_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1984_2047_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1792_1855_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_1536_1599_9_11_i_1_n_0 |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_384_447_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_576_639_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  clk_IBUF_BUFG | GraphicsGUI/COLOR_IMAGE_OUT_reg_640_703_9_11_i_1_n_0   |                                                           |                1 |              4 |
+|  DOWNCOUNTER2  | GraphicsGUI/DOWNCOUNTER1                               | GraphicsGUI/VGA/TimeCounterHorizontal/DOWNCOUNTER1_reg[0] |                4 |              9 |
+|  DOWNCOUNTER2  | GraphicsGUI/DOWNCOUNTER1                               |                                                           |                5 |             11 |
+|  DOWNCOUNTER2  |                                                        | GraphicsGUI/VGA/HorzPix/SR[0]                             |                7 |             12 |
+|  DOWNCOUNTER2  | GraphicsGUI/DOWNCOUNTER1                               | GraphicsGUI/VGA/TimeCounterHorizontal/DOWNCOUNTER1_reg_0  |                9 |             12 |
+|  clk_IBUF_BUFG |                                                        |                                                           |                5 |             12 |
+|  DOWNCOUNTER2  | GraphicsGUI/VGA/TimeCounterHorizontal/EndHorzTrigger   | GraphicsGUI/VGA/TimeCounterVertical/TRIGGER_OUT_reg       |               13 |             22 |
+|  DOWNCOUNTER2  | GraphicsGUI/VGA/TimeCounterHorizontal/EndHorzTrigger   |                                                           |                9 |             25 |
++----------------+--------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+
+
+
