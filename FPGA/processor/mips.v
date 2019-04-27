@@ -1,9 +1,12 @@
 `timescale 1ns / 1ps
 
-module Processor(clk, regout);
-
-input clk;
-output [11:0] regout;
+module Processor;
+//module Processor(clk, regout);
+//input clk;
+//input [11:0] image_pix;
+//input [11:0] water_pix;
+//output [11:0] regout_pix;
+//output [11:0] index;
 
 reg [31:0] in1;
 reg [31:0] in2;
@@ -29,17 +32,33 @@ wire [31:0] out;
 wire [31:0] extendaddr;
 wire [31:0] newpc;
 
-wire [31:0] regout1;
-wire [31:0] regout2;
 wire [31:0] difference;
 
+// vga connection
+wire [31:0] regout;
+wire [11:0] imagein;
+wire [11:0] waterin;
+wire [11:0] counter;
+// test pixel averaging
+reg [11:0] image_pix;
+reg [11:0] water_pix;
+initial begin
+    image_pix = 12'b111111111111;
+    water_pix = 12'b111111111111;
+end
+
+assign imagein = image_pix;
+assign waterin = water_pix;
+assign regout_pix = regout[11:0];
+assign index = counter;
+
 // generate a clock waveform
-//Clock CLK(clk);
+Clock CLK(clk);
 // increment pc and control jumping
 PC pc_(pc, in, clk);
 PC_ALU pc_alu(newpc, pc, extendaddr, chksignal);
 // memory for registers, instructions, and data
-RegisterFile register_file(rw, rs, rt, Rs, Rt, addr3, data3, clk, regout1, regout2);
+RegisterFile register_file(rw, rs, rt, Rs, Rt, addr3, data3, clk, regout, imagein, waterin, counter);
 InstructionMemory inst_mem(inst, pc, clk);
 DataMemory data_mem(opcode, Rt, address, clk, out);
 // split instructions based on R, I, J type
@@ -49,7 +68,6 @@ ALU alu_(opcode, shamt, funct, in1, in2, result, rw, clk, difference);
 // extend sign of the address
 SignExtend sign_extend(addr, extendaddr);
 
-assign regout = regout1[11:0];
 
 // program loop
 always @(*) begin
@@ -129,9 +147,9 @@ TEST VARS:
 regout
 */
 initial begin
-    $monitor("pc = %5d | inst=%b | in1 = %5d | in2 = %5d | result = %12d | time=%5d | clk = %5d | regout1 = %12d | regout2 = %12d |",
-        pc, inst, in1, in2, result, $time, clk, regout1, regout2);
-    #30
+    $monitor("pc = %5d | inst=%b | in1 = %5d | in2 = %5d | result = %12d | time=%5d | clk = %5d | regout = %12d |",
+        pc, inst, in1, in2, result, $time, clk, regout);
+    #45
     $finish;
 end
 
