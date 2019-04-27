@@ -28,7 +28,8 @@ operations = {
     'alu' : 0b000000,
     'lw'  : 0b100011,
     'sw'  : 0b101011,
-    'beq' : 0b000100
+    'beq' : 0b000100,
+    'bne' : 0b000101
 }
 
 # registers in 32-bit hex
