@@ -7,12 +7,18 @@ module GUI(
     VS,                  // vertical sync
     image_choice,
     water_choice,
-    regout
+    regout,
+    image_pix,
+    water_pix,
+    index
     );
 
     input CLK;
     input image_choice, water_choice;
     input [11:0] regout;
+    input [11:0] index;
+    output reg [11:0] image_pix;
+    output reg [11:0] water_pix;
     output HS, VS;
     output [11:0] COLOR_OUT;
     
@@ -31,25 +37,41 @@ module GUI(
         DOWNCOUNTER1 <= ~DOWNCOUNTER1;
     end
     
-    // 2D registers to hold the images in .rgb format
+    // 2D registers to hold the images in .mem format
     // Note: each pixel has 12-bit rgb, so give it 12 bits
     reg [11:0] COLOR_IN;
-    reg [11:0] COLOR_IMAGE1 [0:Size - 1];       // hold image1.rgb
+    reg [11:0] COLOR_IMAGE1 [0:Size - 1];       // image1.mem
     reg [11:0] COLOR_IMAGE2 [0:Size - 1];       // image2.mem
     reg [11:0] COLOR_IMAGE3 [0:Size - 1];       // water1.mem
     reg [11:0] COLOR_IMAGE4 [0:Size - 1];       // water2.mem
     reg [11:0] COLOR_IMAGE_OUT [0:Size - 1];    // output watermarked image
     
+    wire [11:0] selected_image_pix;
+    wire [11:0] selected_water_pix;
+    
     // test area to fill with what is in register 12
-    reg [10:0] counter;
-    initial begin
-        counter = 11'b00000000000;
-    end
+    wire [11:0] counter;
+    assign counter = index;
+    
+    // get the selected pixel for image/watermark
     always @(posedge CLK) begin
-        if(counter >= 500 && counter <= 1000) begin
-            COLOR_IMAGE_OUT[counter] <= regout;
+        if(image_choice == 1'b0) begin
+            image_pix <= COLOR_IMAGE1[counter];
         end
-        counter <= counter + 1;
+        else begin
+            image_pix <= COLOR_IMAGE2[counter];
+        end
+        
+        if(water_choice == 1'b0) begin
+            water_pix <= COLOR_IMAGE3[counter];
+        end
+        else begin
+            water_pix <= COLOR_IMAGE4[counter];
+        end
+    end
+    
+    always @(posedge CLK) begin
+        COLOR_IMAGE_OUT[counter] = regout;
     end
     
     wire [12:0] STATE_IMAGE1;
@@ -113,31 +135,31 @@ module GUI(
         // imageocation: left most on screen
         if(ADDRH >= COLUMN3 && ADDRH <  COLUMN3 + SizeXY && ADDRV >= ROW3 && ADDRV <  ROW3 + SizeXY) begin
             if(image_choice == 1'b0) begin
-                COLOR_IN <= COLOR_IMAGE1[{STATE_IMAGE1}];   // give the VGA Interface the current pixel of image1.mem
+                COLOR_IN = COLOR_IMAGE1[{STATE_IMAGE1}];   // give the VGA Interface the current pixel of image1.mem
             end
             else begin
-                COLOR_IN <= COLOR_IMAGE2[{STATE_IMAGE1}];   // image2.mem
+                COLOR_IN = COLOR_IMAGE2[{STATE_IMAGE1}];   // image2.mem
             end
         end
         
         // watermark location: next over to the right
         else if(ADDRH >= COLUMN5 && ADDRH <  COLUMN5 + SizeXY && ADDRV >= ROW3 && ADDRV <  ROW3 + SizeXY) begin
             if(water_choice == 1'b0) begin
-                COLOR_IN <= COLOR_IMAGE3[{STATE_IMAGE2}];   // water1.mem
+                COLOR_IN = COLOR_IMAGE3[{STATE_IMAGE2}];   // water1.mem
             end
             else begin
-                COLOR_IN <= COLOR_IMAGE4[{STATE_IMAGE2}];   // water2.mem
+                COLOR_IN = COLOR_IMAGE4[{STATE_IMAGE2}];   // water2.mem
             end
         end
         
         // output locations: furthest right
         else if(ADDRH >= COLUMN7 && ADDRH <  COLUMN7 + SizeXY && ADDRV >= ROW3 && ADDRV <  ROW3 + SizeXY) begin
-            COLOR_IN <= COLOR_IMAGE_OUT[{STATE_IMAGE_OUT}];
+            COLOR_IN = COLOR_IMAGE_OUT[{STATE_IMAGE_OUT}];
         end
         
         // else ifs...
         else begin
-            COLOR_IN <= 12'hDDD;    // make the background white if an image is not being drawn there
+            COLOR_IN = 12'hDDD;    // make the background white if an image is not being drawn there
         end
     end
     

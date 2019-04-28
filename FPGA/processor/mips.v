@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 
-module Processor;
-//module Processor(clk, regout);
-//input clk;
-//input [11:0] image_pix;
-//input [11:0] water_pix;
-//output [11:0] regout_pix;
-//output [11:0] index;
+//module Processor;
+module Processor(clk, regout_pix, image_pix, water_pix, index);
+input clk;
+input [11:0] image_pix;
+input [11:0] water_pix;
+output [11:0] regout_pix;
+output [11:0] index;
 
 reg [31:0] in1;
 reg [31:0] in2;
@@ -40,12 +40,12 @@ wire [11:0] imagein;
 wire [11:0] waterin;
 wire [11:0] counter;
 // test pixel averaging
-reg [11:0] image_pix;
-reg [11:0] water_pix;
-initial begin
+//reg [11:0] image_pix;
+//reg [11:0] water_pix;
+/*initial begin
     image_pix = 12'b111111111111;
     water_pix = 12'b111111111111;
-end
+end*/
 
 assign imagein = image_pix;
 assign waterin = water_pix;
@@ -53,7 +53,7 @@ assign regout_pix = regout[11:0];
 assign index = counter;
 
 // generate a clock waveform
-Clock CLK(clk);
+//Clock CLK(clk);
 // increment pc and control jumping
 PC pc_(pc, in, clk);
 PC_ALU pc_alu(newpc, pc, extendaddr, chksignal);
@@ -120,7 +120,7 @@ always @(*) begin
         chksignal = 1'b0;
 
         // if EQ, then jump
-        if(result == 32'b00000000000000000000000000000000) begin
+        if(difference == 32'b00000000000000000000000000000000) begin
             chksignal = 1'b1;
             in = newpc;
         end
@@ -147,9 +147,9 @@ TEST VARS:
 regout
 */
 initial begin
-    $monitor("pc = %5d | inst=%b | in1 = %5d | in2 = %5d | result = %12d | time=%5d | clk = %5d | regout = %12d |",
-        pc, inst, in1, in2, result, $time, clk, regout);
-    #45
+    $monitor("pc = %5d | inst=%b | in1 = %5d | in2 = %5d | result = %12d | time=%5d | clk = %5d | regout = %12d | counter = %12d",
+        pc, inst, in1, in2, result, $time, clk, regout, counter);
+    #150
     $finish;
 end
 

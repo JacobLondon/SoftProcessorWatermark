@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Thu Apr 25 17:04:42 2019
-| Host             : Cygnus running 64-bit major release  (build 9200)
+| Date             : Sat Apr 27 22:24:04 2019
+| Host             : void running 64-bit major release  (build 9200)
 | Command          : report_power -file Graphics_power_routed.rpt -pb Graphics_power_summary_routed.pb -rpx Graphics_power_routed.rpx
 | Design           : Graphics
 | Device           : xc7a100tcsg324-1
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.157        |
+| Total On-Chip Power (W)  | 0.114        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.060        |
+| Dynamic (W)              | 0.017        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.3         |
-| Junction Temperature (C) | 25.7         |
-| Confidence Level         | Low          |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
+| Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -52,19 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.001 |        3 |       --- |             --- |
-| Slice Logic              |     0.006 |     1729 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     1085 |     63400 |            1.71 |
-|   F7/F8 Muxes            |    <0.001 |      235 |     63400 |            0.37 |
-|   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
-|   Register               |    <0.001 |      107 |    126800 |            0.08 |
-|   CARRY4                 |    <0.001 |        8 |     15850 |            0.05 |
-|   LUT as Distributed RAM |     0.000 |      128 |     19000 |            0.67 |
-|   Others                 |     0.000 |        8 |       --- |             --- |
-| Signals                  |     0.005 |     1169 |       --- |             --- |
-| I/O                      |     0.048 |       17 |       210 |            8.10 |
+| Clocks                   |     0.005 |        3 |       --- |             --- |
+| Slice Logic              |     0.006 |     6597 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     3098 |     63400 |            4.89 |
+|   F7/F8 Muxes            |    <0.001 |      775 |     63400 |            1.22 |
+|   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
+|   CARRY4                 |    <0.001 |       10 |     15850 |            0.06 |
+|   Register               |    <0.001 |     1351 |    126800 |            1.07 |
+|   LUT as Distributed RAM |    <0.001 |     1056 |     19000 |            5.56 |
+|   Others                 |     0.000 |       27 |       --- |             --- |
+| Signals                  |     0.005 |     4646 |       --- |             --- |
+| I/O                      |    <0.001 |       17 |       210 |            8.10 |
 | Static Power             |     0.097 |          |           |                 |
-| Total                    |     0.157 |          |           |                 |
+| Total                    |     0.114 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.027 |       0.012 |      0.015 |
-| Vccaux    |       1.800 |     0.020 |       0.002 |      0.018 |
-| Vcco33    |       3.300 |     0.018 |       0.014 |      0.004 |
+| Vccint    |       1.000 |     0.032 |       0.017 |      0.015 |
+| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
+| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -97,12 +97,12 @@ Table of Contents
 | User Input Data             | Confidence | Details                                               | Action                                                                                                             |
 +-----------------------------+------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | Design implementation state | High       | Design is routed                                      |                                                                                                                    |
-| Clock nodes activity        | Low        | User specified less than 75% of clocks                | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| Clock nodes activity        | Medium     | More than 5% of clocks are missing user specification | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
 | I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
 | Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
 | Device models               | High       | Device models are Production                          |                                                                                                                    |
 |                             |            |                                                       |                                                                                                                    |
-| Overall confidence level    | Low        |                                                       |                                                                                                                    |
+| Overall confidence level    | Medium     |                                                       |                                                                                                                    |
 +-----------------------------+------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 
@@ -140,14 +140,16 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+---------------+-----------+
-| Name          | Power (W) |
-+---------------+-----------+
-| Graphics      |     0.060 |
-|   GraphicsGUI |     0.012 |
-|     VGA       |     0.004 |
-|       HorzPix |     0.002 |
-|       VertPix |     0.001 |
-+---------------+-----------+
++-------------------+-----------+
+| Name              | Power (W) |
++-------------------+-----------+
+| Graphics          |     0.017 |
+|   GraphicsGUI     |     0.014 |
+|     VGA           |     0.004 |
+|       HorzPix     |     0.003 |
+|       VertPix     |     0.001 |
+|   MIPS            |     0.003 |
+|     register_file |     0.003 |
++-------------------+-----------+
 
 

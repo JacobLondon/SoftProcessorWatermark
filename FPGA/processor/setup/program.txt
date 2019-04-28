@@ -1,4 +1,4 @@
-# program without looping
+
         .text
 main:
 
@@ -63,6 +63,22 @@ Loop:
         # store averaged blue pixel
         or $t6, $t6, $s5
 
+
+        # increment then check if counter has reached its max value
+        add $t3, $t3, $t1               # counter = counter + 1
+        beq $t3, $t2, ResetCounter      # jump to ResetCounter if counter == 4095
+
+        bne $t0, $t1, Loop      # loop again if not resetting the counter
+
+ResetCounter:
+        sub $t3, $t3, $t3       # reset counter to zero
+        bne $t0, $t1, Loop      # jump back to loop
+
+
+        # return to caller
+        jr $ra
+
+
 begin
 01ce7022
 000c8202
@@ -84,6 +100,11 @@ begin
 0211a820
 0015a842
 01d57025
+01695820
+116a0001
+1509ffe9
+016b5822
+1509ffe7
 end
 
 memdata[0] = 32'b00000001110011100111000000100010;
@@ -106,3 +127,8 @@ memdata[16] = 32'b00000001101101001000100000100100;
 memdata[17] = 32'b00000010000100011010100000100000;
 memdata[18] = 32'b00000000000101011010100001000010;
 memdata[19] = 32'b00000001110101010111000000100101;
+memdata[20] = 32'b00000001011010010101100000100000;
+memdata[21] = 32'b00010001011010100000000000000001;
+memdata[22] = 32'b00010101000010011111111111101001;
+memdata[23] = 32'b00000001011010110101100000100010;
+memdata[24] = 32'b00010101000010011111111111100111;

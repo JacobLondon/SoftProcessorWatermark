@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/impl_1'
+HD_PWD='C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

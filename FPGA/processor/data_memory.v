@@ -9,7 +9,8 @@ input [31:0] Rt;    // value of the register
 output [31:0] out;  // result of load/store the register
 
 // initialize data memory
-reg [31:0] memdata [255:0];
+//reg [31:0] memdata [255:0];
+reg [31:0] memdata [32:0];
 
 // clear some memory
 initial begin

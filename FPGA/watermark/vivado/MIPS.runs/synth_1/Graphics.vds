@@ -2,12 +2,12 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Thu Apr 25 17:00:55 2019
-# Process ID: 15644
-# Current directory: C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1
+# Start of session at: Sat Apr 27 22:20:11 2019
+# Process ID: 17112
+# Current directory: C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1
 # Command line: vivado.exe -log Graphics.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Graphics.tcl
-# Log file: C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1/Graphics.vds
-# Journal file: C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1\vivado.jou
+# Log file: C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1/Graphics.vds
+# Journal file: C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source Graphics.tcl -notrace
 Command: synth_design -top Graphics -part xc7a100tcsg324-1
@@ -15,44 +15,45 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10600 
+INFO: Helper process launched with PID 19056 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 364.645 ; gain = 101.598
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 363.102 ; gain = 101.676
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Graphics' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/Graphics.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Processor' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:3]
-INFO: [Synth 8-6157] synthesizing module 'PC' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'PC' (1#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:4]
-INFO: [Synth 8-6157] synthesizing module 'PC_ALU' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'PC_ALU' (2#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:23]
-INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/register_file.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (3#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/register_file.v:3]
-INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/inst_memory.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (4#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/inst_memory.v:3]
-INFO: [Synth 8-6157] synthesizing module 'DataMemory' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/data_memory.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (5#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/data_memory.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Splitter' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'Splitter' (6#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:4]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/alu.v:4]
-INFO: [Synth 8-6157] synthesizing module 'RippleCarryAdder' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:20]
-INFO: [Synth 8-6157] synthesizing module 'FullAdder' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'FullAdder' (7#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'RippleCarryAdder' (8#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:20]
-INFO: [Synth 8-6157] synthesizing module 'RippleCarrySubtractor' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:65]
-INFO: [Synth 8-6155] done synthesizing module 'RippleCarrySubtractor' (9#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:65]
-INFO: [Synth 8-6157] synthesizing module 'AND' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'AND' (10#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:3]
-INFO: [Synth 8-6157] synthesizing module 'OR' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:45]
-INFO: [Synth 8-6155] done synthesizing module 'OR' (11#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:45]
-INFO: [Synth 8-6157] synthesizing module 'ShiftRight' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:88]
-INFO: [Synth 8-6155] done synthesizing module 'ShiftRight' (12#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:88]
-INFO: [Synth 8-6157] synthesizing module 'ShiftLeft' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:101]
-INFO: [Synth 8-6155] done synthesizing module 'ShiftLeft' (13#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:101]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (14#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/alu.v:4]
-INFO: [Synth 8-6157] synthesizing module 'SignExtend' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/signextend.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'SignExtend' (15#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/signextend.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'Processor' (16#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:3]
-INFO: [Synth 8-6157] synthesizing module 'GUI' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Graphics' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/Graphics.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Processor' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:4]
+INFO: [Synth 8-6157] synthesizing module 'PC' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'PC' (1#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:4]
+INFO: [Synth 8-6157] synthesizing module 'PC_ALU' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC_ALU' (2#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/register_file.v:3]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/register_file.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (3#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/register_file.v:3]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/inst_memory.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (4#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/inst_memory.v:3]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/data_memory.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (5#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/data_memory.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Splitter' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'Splitter' (6#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:4]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/alu.v:4]
+INFO: [Synth 8-6157] synthesizing module 'RippleCarryAdder' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:20]
+INFO: [Synth 8-6157] synthesizing module 'FullAdder' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder' (7#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'RippleCarryAdder' (8#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:20]
+INFO: [Synth 8-6157] synthesizing module 'RippleCarrySubtractor' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'RippleCarrySubtractor' (9#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v:65]
+INFO: [Synth 8-6157] synthesizing module 'AND' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'AND' (10#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:3]
+INFO: [Synth 8-6157] synthesizing module 'OR' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'OR' (11#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:45]
+INFO: [Synth 8-6157] synthesizing module 'ShiftRight' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'ShiftRight' (12#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:88]
+INFO: [Synth 8-6157] synthesizing module 'ShiftLeft' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:101]
+INFO: [Synth 8-6155] done synthesizing module 'ShiftLeft' (13#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v:101]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (14#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/alu.v:4]
+INFO: [Synth 8-6157] synthesizing module 'SignExtend' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/signextend.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'SignExtend' (15#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/signextend.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'Processor' (16#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:4]
+INFO: [Synth 8-6157] synthesizing module 'GUI' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:3]
 	Parameter Size bound to: 13'b1000000000000 
 	Parameter SizeXY bound to: 7'b1000000 
 	Parameter COLUMN0 bound to: 0 - type: integer 
@@ -68,11 +69,11 @@ INFO: [Synth 8-6157] synthesizing module 'GUI' [C:/Users/jelon/OneDrive/Document
 	Parameter ROW2 bound to: 128 - type: integer 
 	Parameter ROW3 bound to: 192 - type: integer 
 	Parameter ROW4 bound to: 256 - type: integer 
-INFO: [Synth 8-3876] $readmem data file 'image1.mem' is read successfully [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:77]
-INFO: [Synth 8-3876] $readmem data file 'image2.mem' is read successfully [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:78]
-INFO: [Synth 8-3876] $readmem data file 'water1.mem' is read successfully [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:79]
-INFO: [Synth 8-3876] $readmem data file 'water2.mem' is read successfully [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:80]
-INFO: [Synth 8-6157] synthesizing module 'VGAInterface' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/VGAInterface.v:3]
+INFO: [Synth 8-3876] $readmem data file 'image1.mem' is read successfully [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:99]
+INFO: [Synth 8-3876] $readmem data file 'image2.mem' is read successfully [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:100]
+INFO: [Synth 8-3876] $readmem data file 'water1.mem' is read successfully [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:101]
+INFO: [Synth 8-3876] $readmem data file 'water2.mem' is read successfully [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:102]
+INFO: [Synth 8-6157] synthesizing module 'VGAInterface' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/VGAInterface.v:3]
 	Parameter HorzTimeToPulseWidthEnd bound to: 10'b0001100000 
 	Parameter HorzTimeToBackPorchEnd bound to: 10'b0010010000 
 	Parameter HorzTimeToDisplayTimeEnd bound to: 10'b1100010000 
@@ -81,29 +82,29 @@ INFO: [Synth 8-6157] synthesizing module 'VGAInterface' [C:/Users/jelon/OneDrive
 	Parameter VertTimeToBackPorchEnd bound to: 10'b0000011111 
 	Parameter VertTimeToDisplayTimeEnd bound to: 10'b0111111111 
 	Parameter VertTimeToFrontPorchEnd bound to: 10'b1000001001 
-INFO: [Synth 8-6157] synthesizing module 'Counter' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Counter' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/counter.v:3]
 	Parameter MaxValue bound to: 799 - type: integer 
 	Parameter Size bound to: 10 - type: integer 
 	Parameter InitialValue bound to: 799 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'Counter' (17#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/counter.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Counter__parameterized0' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/counter.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Counter' (17#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Counter__parameterized0' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/counter.v:3]
 	Parameter MaxValue bound to: 520 - type: integer 
 	Parameter Size bound to: 10 - type: integer 
 	Parameter InitialValue bound to: 520 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'Counter__parameterized0' (17#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/counter.v:3]
-INFO: [Synth 8-6157] synthesizing module 'PixCounter' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/PixCounter.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Counter__parameterized0' (17#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'PixCounter' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/PixCounter.v:3]
 	Parameter AddressSize bound to: 10 - type: integer 
 	Parameter TimeToBackPorchEnd bound to: 143 - type: integer 
 	Parameter TimeToDisplayTimeEnd bound to: 783 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'PixCounter' (18#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/PixCounter.v:3]
-INFO: [Synth 8-6157] synthesizing module 'PixCounter__parameterized0' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/PixCounter.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'PixCounter' (18#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/PixCounter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'PixCounter__parameterized0' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/PixCounter.v:3]
 	Parameter AddressSize bound to: 9 - type: integer 
 	Parameter TimeToBackPorchEnd bound to: 30 - type: integer 
 	Parameter TimeToDisplayTimeEnd bound to: 510 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'PixCounter__parameterized0' (18#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/PixCounter.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'VGAInterface' (19#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/VGAInterface.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'GUI' (20#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'Graphics' (21#1) [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/vga/Graphics.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'PixCounter__parameterized0' (18#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/PixCounter.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'VGAInterface' (19#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/VGAInterface.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'GUI' (20#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Graphics' (21#1) [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/Graphics.v:3]
 WARNING: [Synth 8-3331] design RippleCarrySubtractor has unconnected port carryin
 WARNING: [Synth 8-3331] design ALU has unconnected port clk
 WARNING: [Synth 8-3331] design DataMemory has unconnected port addr[31]
@@ -130,8 +131,10 @@ WARNING: [Synth 8-3331] design DataMemory has unconnected port addr[11]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port addr[10]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port addr[9]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port addr[8]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port addr[7]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port addr[6]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 430.453 ; gain = 167.406
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 443.898 ; gain = 182.473
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -144,79 +147,48 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 430.453 ; gain = 167.406
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 443.898 ; gain = 182.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 430.453 ; gain = 167.406
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 443.898 ; gain = 182.473
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc]
-Finished Parsing XDC File [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Graphics_propImpl.xdc].
+Parsing XDC File [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Graphics_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Graphics_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 791.563 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 801.266 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 791.563 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 801.266 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 791.563 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 791.563 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 801.266 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 801.266 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 791.563 ; gain = 528.516
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 801.266 ; gain = 539.840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 791.563 ; gain = 528.516
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 801.266 ; gain = 539.840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 791.563 ; gain = 528.516
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 801.266 ; gain = 539.840
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:38]
-INFO: [Synth 8-5546] ROM "regmem_reg[31]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[30]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[29]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[28]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[27]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[26]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[25]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[24]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[23]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[22]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[21]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[20]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[19]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[18]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[17]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[16]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[15]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[14]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[13]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[12]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[11]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[10]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[9]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[8]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[7]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[6]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[5]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[4]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[3]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[2]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[1]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "regmem_reg[0]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "memdata" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:38]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v:38]
+INFO: [Synth 8-5546] ROM "memdata" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "memdata" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rd" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "addr" won't be mapped to RAM because it is too sparse
@@ -227,21 +199,21 @@ INFO: [Synth 8-5545] ROM "result" won't be mapped to RAM because address size (3
 INFO: [Synth 8-5546] ROM "in1" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "chksignal" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "chksignal" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-327] inferring latch for variable 'rd_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:32]
-WARNING: [Synth 8-327] inferring latch for variable 'shamt_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:33]
-WARNING: [Synth 8-327] inferring latch for variable 'funct_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:34]
-WARNING: [Synth 8-327] inferring latch for variable 'addr_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:40]
-WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/alu.v:61]
-WARNING: [Synth 8-327] inferring latch for variable 'rw_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/alu.v:60]
-WARNING: [Synth 8-327] inferring latch for variable 'addr3_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:42]
-WARNING: [Synth 8-327] inferring latch for variable 'data3_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:42]
-WARNING: [Synth 8-327] inferring latch for variable 'in1_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:48]
-WARNING: [Synth 8-327] inferring latch for variable 'in2_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:48]
-WARNING: [Synth 8-327] inferring latch for variable 'address_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:44]
-WARNING: [Synth 8-327] inferring latch for variable 'in_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:39]
-WARNING: [Synth 8-327] inferring latch for variable 'chksignal_reg' [C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:40]
+WARNING: [Synth 8-327] inferring latch for variable 'rd_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:32]
+WARNING: [Synth 8-327] inferring latch for variable 'shamt_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:33]
+WARNING: [Synth 8-327] inferring latch for variable 'funct_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:34]
+WARNING: [Synth 8-327] inferring latch for variable 'addr_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v:41]
+WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/alu.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'rw_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/alu.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'addr3_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'data3_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'in1_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:67]
+WARNING: [Synth 8-327] inferring latch for variable 'in2_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:67]
+WARNING: [Synth 8-327] inferring latch for variable 'address_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'in_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:58]
+WARNING: [Synth 8-327] inferring latch for variable 'chksignal_reg' [C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v:59]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 791.563 ; gain = 528.516
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 801.266 ; gain = 539.840
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -254,32 +226,31 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 1     
 	   3 Input     32 Bit       Adders := 1     
 	   2 Input     13 Bit       Adders := 2     
 	   2 Input     12 Bit       Adders := 2     
-	   2 Input     11 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 3     
 	   2 Input      9 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 160   
 +---Registers : 
 	               32 Bit    Registers := 34    
-	               12 Bit    Registers := 2     
-	               11 Bit    Registers := 1     
+	               12 Bit    Registers := 4     
 	               10 Bit    Registers := 3     
 	                9 Bit    Registers := 1     
 	                1 Bit    Registers := 6     
 +---RAMs : 
 	              48K Bit         RAMs := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 44    
+	  27 Input     32 Bit        Muxes := 1     
 	   4 Input     32 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 5     
+	   2 Input     12 Bit        Muxes := 7     
 	   2 Input      5 Bit        Muxes := 1     
 	   5 Input      2 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 46    
+	   2 Input      1 Bit        Muxes := 14    
 	   6 Input      1 Bit        Muxes := 3     
 	   4 Input      1 Bit        Muxes := 1     
 	   3 Input      1 Bit        Muxes := 5     
@@ -298,22 +269,22 @@ Detailed RTL Component Info :
 Module PC_ALU 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 1     
 	   3 Input     32 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 4     
 Module RegisterFile 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 32    
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 32    
+	   2 Input     32 Bit        Muxes := 37    
 Module InstructionMemory 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
+	  27 Input     32 Bit        Muxes := 1     
 Module DataMemory 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -386,15 +357,13 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     13 Bit       Adders := 2     
 	   2 Input     12 Bit       Adders := 2     
-	   2 Input     11 Bit       Adders := 1     
 +---Registers : 
-	               12 Bit    Registers := 1     
-	               11 Bit    Registers := 1     
+	               12 Bit    Registers := 3     
 	                1 Bit    Registers := 2     
 +---RAMs : 
 	              48K Bit         RAMs := 1     
 +---Muxes : 
-	   2 Input     12 Bit        Muxes := 4     
+	   2 Input     12 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -411,177 +380,92 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5545] ROM "MIPS/alu_/result" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "MIPS/alu_/result" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "MIPS/chksignal" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[21]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[22]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[23]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[24]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[25]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[10]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[9]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[8]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[7]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[6]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/shamt_reg[4]' (LD) to 'MIPS/split/shamt_reg[0]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/shamt_reg[3]' (LD) to 'MIPS/split/shamt_reg[0]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/shamt_reg[2]' (LD) to 'MIPS/split/shamt_reg[0]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/shamt_reg[1]' (LD) to 'MIPS/split/shamt_reg[0]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[13]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[12]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[15]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[11]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[0]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[2]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[1]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[5]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[3]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
+INFO: [Synth 8-5545] ROM "result" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "result" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "chksignal" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3331] design ALU has unconnected port clk
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[31]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[30]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[29]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[28]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[27]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[26]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[25]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[24]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[23]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[22]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[21]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[20]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[19]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[18]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[17]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[16]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[15]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[14]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[13]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[12]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[11]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[10]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[9]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[8]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[7]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[6]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port pc[5]
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/water_pix_reg[0]' (FD) to 'GraphicsGUI/water_pix_reg[4]'
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/water_pix_reg[1]' (FD) to 'GraphicsGUI/water_pix_reg[5]'
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/water_pix_reg[2]' (FD) to 'GraphicsGUI/water_pix_reg[6]'
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/water_pix_reg[3]' (FD) to 'GraphicsGUI/water_pix_reg[7]'
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/image_pix_reg[4]' (FD) to 'GraphicsGUI/image_pix_reg[5]'
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/image_pix_reg[5]' (FD) to 'GraphicsGUI/image_pix_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GraphicsGUI/\image_pix_reg[7] )
+INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[10]' (FD) to 'MIPS/inst_mem/inst_reg[7]'
+INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[7]' (FD) to 'MIPS/inst_mem/inst_reg[26]'
+INFO: [Synth 8-3886] merging instance 'MIPS/split/shamt_reg[4]' (LD) to 'MIPS/split/shamt_reg[1]'
+INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[12]' (FD) to 'MIPS/inst_mem/inst_reg[14]'
 INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[4]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[14]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/rd_reg[2]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[18]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
 INFO: [Synth 8-3886] merging instance 'MIPS/split/rd_reg[1]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[17]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/rd_reg[4]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[20]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/rd_reg[0]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[16]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/funct_reg[0]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/funct_reg[2]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/funct_reg[1]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/funct_reg[5]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/funct_reg[3]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/funct_reg[4]' (LD) to 'MIPS/split/rd_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/split/rd_reg[3]' (LD) to 'MIPS/split/shamt_reg[0]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[19]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[26]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[27]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[28]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[29]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[30]' (FD) to 'MIPS/inst_mem/inst_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/inst_mem/inst_reg[31] )
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[31]' (FD) to 'MIPS/inst_mem/inst_reg[30]'
+INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[30]' (FD) to 'MIPS/inst_mem/inst_reg[29]'
+INFO: [Synth 8-3886] merging instance 'MIPS/inst_mem/inst_reg[29]' (FD) to 'MIPS/inst_mem/inst_reg[27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/inst_mem/inst_reg[27] )
 WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
 WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
 WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
 WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
 WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
 WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[7]  is always disabled
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/addr_reg[9] )
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[30]' (LD) to 'MIPS/in2_reg[30]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[31]' (LD) to 'MIPS/in2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[29]' (LD) to 'MIPS/in2_reg[29]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[28]' (LD) to 'MIPS/in2_reg[28]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[27]' (LD) to 'MIPS/in2_reg[27]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[26]' (LD) to 'MIPS/in2_reg[26]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[25]' (LD) to 'MIPS/in2_reg[25]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[24]' (LD) to 'MIPS/in2_reg[24]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[23]' (LD) to 'MIPS/in2_reg[23]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[22]' (LD) to 'MIPS/in2_reg[22]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[21]' (LD) to 'MIPS/in2_reg[21]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[20]' (LD) to 'MIPS/in2_reg[20]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[19]' (LD) to 'MIPS/in2_reg[19]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[18]' (LD) to 'MIPS/in2_reg[18]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[17]' (LD) to 'MIPS/in2_reg[17]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[16]' (LD) to 'MIPS/in2_reg[16]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[15]' (LD) to 'MIPS/in2_reg[15]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[14]' (LD) to 'MIPS/in2_reg[14]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[13]' (LD) to 'MIPS/in2_reg[13]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[12]' (LD) to 'MIPS/in2_reg[12]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[11]' (LD) to 'MIPS/in2_reg[11]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[10]' (LD) to 'MIPS/in2_reg[10]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[0]' (LD) to 'MIPS/in2_reg[0]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[1]' (LD) to 'MIPS/in2_reg[1]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[2]' (LD) to 'MIPS/in2_reg[2]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[3]' (LD) to 'MIPS/in2_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[4]' (LD) to 'MIPS/in2_reg[4]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[5]' (LD) to 'MIPS/in2_reg[5]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[6]' (LD) to 'MIPS/in2_reg[6]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[7]' (LD) to 'MIPS/in2_reg[7]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[8]' (LD) to 'MIPS/in2_reg[8]'
-INFO: [Synth 8-3886] merging instance 'MIPS/in1_reg[9]' (LD) to 'MIPS/in2_reg[9]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/shamt_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\MIPS/alu_/rw_reg )
-INFO: [Synth 8-3886] merging instance 'MIPS/addr3_reg[2]' (LD) to 'MIPS/addr3_reg[4]'
-INFO: [Synth 8-3886] merging instance 'MIPS/addr3_reg[1]' (LD) to 'MIPS/addr3_reg[4]'
-INFO: [Synth 8-3886] merging instance 'MIPS/addr3_reg[4]' (LD) to 'MIPS/addr3_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/addr3_reg[0]' (LD) to 'MIPS/addr3_reg[3]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[24]' (LD) to 'MIPS/alu_/result_reg[24]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[16]' (LD) to 'MIPS/alu_/result_reg[16]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[20]' (LD) to 'MIPS/alu_/result_reg[20]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[28]' (LD) to 'MIPS/alu_/result_reg[28]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[12]' (LD) to 'MIPS/alu_/result_reg[12]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[22]' (LD) to 'MIPS/alu_/result_reg[22]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[30]' (LD) to 'MIPS/alu_/result_reg[30]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[14]' (LD) to 'MIPS/alu_/result_reg[14]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[18]' (LD) to 'MIPS/alu_/result_reg[18]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[26]' (LD) to 'MIPS/alu_/result_reg[26]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[23]' (LD) to 'MIPS/alu_/result_reg[23]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[31]' (LD) to 'MIPS/alu_/result_reg[31]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[15]' (LD) to 'MIPS/alu_/result_reg[15]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[19]' (LD) to 'MIPS/alu_/result_reg[19]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[27]' (LD) to 'MIPS/alu_/result_reg[27]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[21]' (LD) to 'MIPS/alu_/result_reg[21]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[29]' (LD) to 'MIPS/alu_/result_reg[29]'
-INFO: [Synth 8-3886] merging instance 'MIPS/data3_reg[13]' (LD) to 'MIPS/alu_/result_reg[13]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/addr3_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/register_file /\regmem_reg[0][9] )
-WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[15]) is unused and will be removed from module Graphics.
+INFO: [Synth 8-3886] merging instance 'MIPS/split/addr_reg[12]' (LD) to 'MIPS/split/addr_reg[14]'
+INFO: [Synth 8-3886] merging instance 'MIPS/split/addr_reg[10]' (LD) to 'MIPS/split/addr_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MIPS/split/funct_reg[4] )
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-3332] Sequential element (MIPS/split/funct_reg[4]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[14]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[13]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[12]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[11]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[10]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[9]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[8]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[7]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[6]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[5]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[4]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[3]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[2]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[1]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[0]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/split/shamt_reg[0]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/alu_/rw_reg) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/addr3_reg[3]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[31]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[30]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[29]) is unused and will be removed from module Graphics.
@@ -608,12 +492,6 @@ WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[9]) is unused and w
 WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[8]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[7]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[6]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[5]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[4]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[3]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[2]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[1]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[0]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[31]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[30]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[29]) is unused and will be removed from module Graphics.
@@ -641,31 +519,56 @@ WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[8]) is unused and will b
 WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[7]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[6]) is unused and will be removed from module Graphics.
 WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[5]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[4]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[3]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[2]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[1]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in_reg[0]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/chksignal_reg) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[30]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[31]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[29]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[28]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[27]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[26]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[25]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[24]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[23]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[22]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[21]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[20]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[19]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[18]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[17]) is unused and will be removed from module Graphics.
-WARNING: [Synth 8-3332] Sequential element (MIPS/in2_reg[16]) is unused and will be removed from module Graphics.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 791.563 ; gain = 528.516
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:01:33 . Memory (MB): peak = 844.934 ; gain = 583.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -683,15 +586,24 @@ ROM:
 |GUI         | p_0_out    | 4096x12       | LUT            | 
 |GUI         | p_0_out    | 4096x12       | LUT            | 
 |GUI         | p_0_out    | 4096x12       | LUT            | 
+|GUI         | p_0_out    | 4096x12       | LUT            | 
+|GUI         | p_0_out    | 4096x12       | LUT            | 
+|GUI         | p_0_out    | 4096x12       | LUT            | 
+|GUI         | p_0_out    | 4096x12       | LUT            | 
+|GUI         | p_0_out    | 4096x12       | LUT            | 
+|GUI         | p_0_out    | 4096x12       | LUT            | 
+|GUI         | p_0_out    | 4096x12       | LUT            | 
+|GUI         | p_0_out    | 4096x12       | LUT            | 
 +------------+------------+---------------+----------------+
 
 
 Distributed RAM: Preliminary Mapping  Report (see note below)
-+------------+---------------------+-----------+----------------------+----------------+
-|Module Name | RTL Object          | Inference | Size (Depth x Width) | Primitives     | 
-+------------+---------------------+-----------+----------------------+----------------+
-|GraphicsGUI | COLOR_IMAGE_OUT_reg | Implied   | 2 K x 12             | RAM64M x 256   | 
-+------------+---------------------+-----------+----------------------+----------------+
++------------+---------------------------+-----------+----------------------+--------------------------------+
+|Module Name | RTL Object                | Inference | Size (Depth x Width) | Primitives                     | 
++------------+---------------------------+-----------+----------------------+--------------------------------+
+|Graphics    | MIPS/data_mem/memdata_reg | Implied   | 64 x 32              | RAM16X1S x 32  RAM32X1S x 32   | 
+|GraphicsGUI | COLOR_IMAGE_OUT_reg       | Implied   | 4 K x 12             | RAM64M x 256                   | 
++------------+---------------------------+-----------+----------------------+--------------------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 ---------------------------------------------------------------------------------
@@ -707,24 +619,49 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:47 ; elapsed = 00:01:51 . Memory (MB): peak = 793.051 ; gain = 530.004
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:35 ; elapsed = 00:01:43 . Memory (MB): peak = 844.934 ; gain = 583.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \MIPS/address_reg[5]  is always disabled
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:47 ; elapsed = 00:01:52 . Memory (MB): peak = 794.254 ; gain = 531.207
+Finished Timing Optimization : Time (s): cpu = 00:01:38 ; elapsed = 00:01:47 . Memory (MB): peak = 895.129 ; gain = 633.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Final Mapping  Report
-+------------+---------------------+-----------+----------------------+----------------+
-|Module Name | RTL Object          | Inference | Size (Depth x Width) | Primitives     | 
-+------------+---------------------+-----------+----------------------+----------------+
-|GraphicsGUI | COLOR_IMAGE_OUT_reg | Implied   | 2 K x 12             | RAM64M x 256   | 
-+------------+---------------------+-----------+----------------------+----------------+
++------------+---------------------------+-----------+----------------------+--------------------------------+
+|Module Name | RTL Object                | Inference | Size (Depth x Width) | Primitives                     | 
++------------+---------------------------+-----------+----------------------+--------------------------------+
+|Graphics    | MIPS/data_mem/memdata_reg | Implied   | 64 x 32              | RAM16X1S x 32  RAM32X1S x 32   | 
+|GraphicsGUI | COLOR_IMAGE_OUT_reg       | Implied   | 4 K x 12             | RAM64M x 256                   | 
++------------+---------------------------+-----------+----------------------+--------------------------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -738,8 +675,19 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[5]) is unused and will be removed from module Graphics.
+WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[4]) is unused and will be removed from module Graphics.
+WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[3]) is unused and will be removed from module Graphics.
+WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[2]) is unused and will be removed from module Graphics.
+WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[1]) is unused and will be removed from module Graphics.
+WARNING: [Synth 8-3332] Sequential element (MIPS/address_reg[0]) is unused and will be removed from module Graphics.
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/water_pix_reg[4]' (FD) to 'GraphicsGUI/water_pix_reg[8]'
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/water_pix_reg[5]' (FD) to 'GraphicsGUI/water_pix_reg[9]'
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/water_pix_reg[6]' (FD) to 'GraphicsGUI/water_pix_reg[10]'
+INFO: [Synth 8-3886] merging instance 'GraphicsGUI/water_pix_reg[7]' (FD) to 'GraphicsGUI/water_pix_reg[11]'
+WARNING: [Synth 8-3332] Sequential element (MIPS/split/addr_reg[15]) is unused and will be removed from module Graphics.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:49 ; elapsed = 00:01:54 . Memory (MB): peak = 807.527 ; gain = 544.480
+Finished Technology Mapping : Time (s): cpu = 00:01:42 ; elapsed = 00:01:51 . Memory (MB): peak = 899.828 ; gain = 638.402
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -763,7 +711,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:51 ; elapsed = 00:01:56 . Memory (MB): peak = 807.527 ; gain = 544.480
+Finished IO Insertion : Time (s): cpu = 00:01:44 ; elapsed = 00:01:53 . Memory (MB): peak = 899.828 ; gain = 638.402
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -776,7 +724,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:51 ; elapsed = 00:01:56 . Memory (MB): peak = 807.527 ; gain = 544.480
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:44 ; elapsed = 00:01:53 . Memory (MB): peak = 899.828 ; gain = 638.402
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -788,25 +736,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:52 ; elapsed = 00:01:56 . Memory (MB): peak = 807.527 ; gain = 544.480
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:44 ; elapsed = 00:01:54 . Memory (MB): peak = 899.828 ; gain = 638.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:52 ; elapsed = 00:01:56 . Memory (MB): peak = 807.527 ; gain = 544.480
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:44 ; elapsed = 00:01:54 . Memory (MB): peak = 899.828 ; gain = 638.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:52 ; elapsed = 00:01:57 . Memory (MB): peak = 807.527 ; gain = 544.480
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:45 ; elapsed = 00:01:54 . Memory (MB): peak = 899.828 ; gain = 638.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:52 ; elapsed = 00:01:57 . Memory (MB): peak = 807.527 ; gain = 544.480
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:45 ; elapsed = 00:01:54 . Memory (MB): peak = 899.828 ; gain = 638.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -819,62 +767,77 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |     8|
-|3     |LUT1   |    10|
-|4     |LUT2   |    29|
-|5     |LUT3   |    21|
-|6     |LUT4   |    81|
-|7     |LUT5   |   405|
-|8     |LUT6   |   684|
-|9     |MUXF7  |   193|
-|10    |MUXF8  |    54|
-|11    |RAM64M |    32|
-|12    |FDRE   |    98|
-|13    |FDSE   |     9|
-|14    |IBUF   |     3|
-|15    |OBUF   |    14|
-+------+-------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     5|
+|2     |CARRY4   |    10|
+|3     |LUT1     |     9|
+|4     |LUT2     |    85|
+|5     |LUT3     |    75|
+|6     |LUT4     |   223|
+|7     |LUT5     |   493|
+|8     |LUT6     |  2488|
+|9     |MUXF7    |   672|
+|10    |MUXF8    |   103|
+|11    |RAM32X1S |    32|
+|12    |RAM64M   |   256|
+|13    |FDRE     |  1179|
+|14    |FDSE     |    15|
+|15    |LD       |   155|
+|16    |LDC      |     1|
+|17    |LDCP     |     1|
+|18    |IBUF     |     3|
+|19    |OBUF     |    14|
++------+---------+------+
 
 Report Instance Areas: 
 +------+----------------------------+---------------------------+------+
 |      |Instance                    |Module                     |Cells |
 +------+----------------------------+---------------------------+------+
-|1     |top                         |                           |  1643|
-|2     |  GraphicsGUI               |GUI                        |  1624|
-|3     |    VGA                     |VGAInterface               |   279|
-|4     |      HorzPix               |PixCounter                 |    89|
-|5     |      TimeCounterHorizontal |Counter                    |    39|
-|6     |      TimeCounterVertical   |Counter__parameterized0    |    44|
-|7     |      VertPix               |PixCounter__parameterized0 |    93|
+|1     |top                         |                           |  5819|
+|2     |  GraphicsGUI               |GUI                        |  3060|
+|3     |    VGA                     |VGAInterface               |   624|
+|4     |      HorzPix               |PixCounter                 |   397|
+|5     |      TimeCounterHorizontal |Counter                    |    35|
+|6     |      TimeCounterVertical   |Counter__parameterized0    |    61|
+|7     |      VertPix               |PixCounter__parameterized0 |   117|
+|8     |  MIPS                      |Processor                  |  2737|
+|9     |    data_mem                |DataMemory                 |    32|
+|10    |    alu_                    |ALU                        |   241|
+|11    |    inst_mem                |InstructionMemory          |    99|
+|12    |    pc_                     |PC                         |    41|
+|13    |    pc_alu                  |PC_ALU                     |     2|
+|14    |    register_file           |RegisterFile               |  1932|
+|15    |    split                   |Splitter                   |   282|
 +------+----------------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:52 ; elapsed = 00:01:57 . Memory (MB): peak = 807.527 ; gain = 544.480
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:45 ; elapsed = 00:01:54 . Memory (MB): peak = 899.828 ; gain = 638.402
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 165 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:40 ; elapsed = 00:01:48 . Memory (MB): peak = 807.527 ; gain = 183.371
-Synthesis Optimization Complete : Time (s): cpu = 00:01:52 ; elapsed = 00:01:57 . Memory (MB): peak = 807.527 ; gain = 544.480
+Synthesis finished with 0 errors, 0 critical warnings and 207 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:34 ; elapsed = 00:01:47 . Memory (MB): peak = 899.828 ; gain = 281.035
+Synthesis Optimization Complete : Time (s): cpu = 00:01:45 ; elapsed = 00:01:54 . Memory (MB): peak = 899.828 ; gain = 638.402
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 287 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'Graphics' is not ideal for floorplanning, since the cellview 'GUI' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Netlist 29-17] Analyzing 1230 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.742 ; gain = 0.000
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 32 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 899.828 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 32 instances were transformed.
-  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 32 instances
+  A total of 445 instances were transformed.
+  LD => LDCE: 155 instances
+  LDC => LDCE: 1 instances
+  LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 1 instances
+  RAM32X1S => RAM32X1S (inverted pins: WCLK) (RAMS32): 32 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 256 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-243 Infos, 156 Warnings, 0 Critical Warnings and 0 Errors encountered.
+104 Infos, 235 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:56 ; elapsed = 00:02:01 . Memory (MB): peak = 814.742 ; gain = 562.566
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.742 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:47 ; elapsed = 00:01:58 . Memory (MB): peak = 899.828 ; gain = 646.559
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 899.828 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1/Graphics.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1/Graphics.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Graphics_utilization_synth.rpt -pb Graphics_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 25 17:03:00 2019...
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 27 22:22:14 2019...

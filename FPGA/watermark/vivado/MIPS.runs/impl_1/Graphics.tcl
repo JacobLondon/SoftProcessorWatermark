@@ -69,12 +69,12 @@ set rc [catch {
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.cache/wt [current_project]
-  set_property parent.project_path C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.xpr [current_project]
-  set_property ip_output_repo C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.cache/wt [current_project]
+  set_property parent.project_path C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.xpr [current_project]
+  set_property ip_output_repo C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1/Graphics.dcp
-  read_xdc C:/Users/jelon/OneDrive/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc
+  add_files -quiet C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.runs/synth_1/Graphics.dcp
+  read_xdc C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc
   link_design -top Graphics -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]

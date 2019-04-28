@@ -35,7 +35,7 @@ assign negative = extendaddr[31];
 assign ones = ~extendaddr[31:0];
 
 // jump if chksignal (control for jumping forward or backward), else increment pc
-assign newpc = (chksignal) ? ((negative) ? (pc - ones) : (pc + extendaddr)) : (pc + 1);
+assign newpc = (chksignal) ? ((negative) ? (pc - ones) : (pc + extendaddr + 1)) : (pc + 1);
 
 endmodule
 

@@ -37,6 +37,7 @@ always @(inst) begin
     else begin
         rs = inst[25:21];
         rt = inst[20:16];
+        //rd = 5'b00000;
         addr = inst[15:0];
     end
 
