@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Apr 27 22:24:05 2019
+| Date         : Sun Apr 28 08:15:40 2019
 | Host         : void running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file Graphics_timing_summary_routed.rpt -pb Graphics_timing_summary_routed.pb -rpx Graphics_timing_summary_routed.rpx -warn_on_violation
 | Design       : Graphics
@@ -52,7 +52,7 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 123 register/latch pins with no clock driven by root clock pin: GraphicsGUI/DOWNCOUNTER2_reg/Q (HIGH)
+ There are 124 register/latch pins with no clock driven by root clock pin: GraphicsGUI/DOWNCOUNTER2_reg/Q (HIGH)
 
  There are 37 register/latch pins with no clock driven by root clock pin: MIPS/in1_reg[0]/Q (HIGH)
 
@@ -182,9 +182,11 @@ Table of Contents
 
  There are 37 register/latch pins with no clock driven by root clock pin: MIPS/in2_reg[9]/Q (HIGH)
 
- There are 157 register/latch pins with no clock driven by root clock pin: MIPS/inst_mem/inst_reg[26]/Q (HIGH)
+ There are 158 register/latch pins with no clock driven by root clock pin: MIPS/inst_mem/inst_reg[26]/Q (HIGH)
 
- There are 157 register/latch pins with no clock driven by root clock pin: MIPS/inst_mem/inst_reg[28]/Q (HIGH)
+ There are 158 register/latch pins with no clock driven by root clock pin: MIPS/inst_mem/inst_reg[28]/Q (HIGH)
+
+ There are 1110 register/latch pins with no clock driven by root clock pin: MIPS/register_file/regmem_reg[15][0]/Q (HIGH)
 
  There are 140 register/latch pins with no clock driven by root clock pin: MIPS/split/funct_reg[0]/Q (HIGH)
 
@@ -193,6 +195,8 @@ Table of Contents
  There are 140 register/latch pins with no clock driven by root clock pin: MIPS/split/funct_reg[2]/Q (HIGH)
 
  There are 140 register/latch pins with no clock driven by root clock pin: MIPS/split/funct_reg[3]/Q (HIGH)
+
+ There are 140 register/latch pins with no clock driven by root clock pin: MIPS/split/funct_reg[4]/Q (HIGH)
 
  There are 140 register/latch pins with no clock driven by root clock pin: MIPS/split/funct_reg[5]/Q (HIGH)
 
@@ -209,7 +213,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 455 pins that are not constrained for maximum delay. (HIGH)
+ There are 8481 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -268,7 +272,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      0.471        0.000                      0                 8039        0.068        0.000                      0                 8039        3.750        0.000                       0                  2128  
+      0.525        0.000                      0                   84        0.036        0.000                      0                   84        3.750        0.000                       0                  1104  
 
 
 All user specified timing constraints are met.
@@ -291,7 +295,7 @@ sys_clk_pin  {0.000 5.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-sys_clk_pin         0.471        0.000                      0                 8039        0.068        0.000                      0                 8039        3.750        0.000                       0                  2128  
+sys_clk_pin         0.525        0.000                      0                   84        0.036        0.000                      0                   84        3.750        0.000                       0                  1104  
 
 
 ------------------------------------------------------------------------------------------------
@@ -322,252 +326,28 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  sys_clk_pin
   To Clock:  sys_clk_pin
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.471ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.068ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        0.525ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.036ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.750ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.471ns  (required time - arrival time)
-  Source:                 MIPS/register_file/regmem_reg[11][5]/C
+Slack (MET) :             0.525ns  (required time - arrival time)
+  Source:                 MIPS/inst_mem/inst_reg[17]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMA/WADR5
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        9.123ns  (logic 0.518ns (5.678%)  route 8.605ns (94.322%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.135ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.911ns = ( 14.911 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.226ns
-    Clock Pessimism Removal (CPR):    0.180ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.623     5.226    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X50Y67         FDRE                                         r  MIPS/register_file/regmem_reg[11][5]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X50Y67         FDRE (Prop_fdre_C_Q)         0.518     5.744 r  MIPS/register_file/regmem_reg[11][5]/Q
-                         net (fo=1865, routed)        8.605    14.349    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/ADDRD5
-    SLICE_X56Y104        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMA/WADR5
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.489    14.911    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/WCLK
-    SLICE_X56Y104        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMA/CLK
-                         clock pessimism              0.180    15.091    
-                         clock uncertainty           -0.035    15.056    
-    SLICE_X56Y104        RAMD64E (Setup_ramd64e_CLK_WADR5)
-                                                     -0.236    14.820    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMA
-  -------------------------------------------------------------------
-                         required time                         14.820    
-                         arrival time                         -14.349    
-  -------------------------------------------------------------------
-                         slack                                  0.471    
-
-Slack (MET) :             0.471ns  (required time - arrival time)
-  Source:                 MIPS/register_file/regmem_reg[11][5]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMB/WADR5
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        9.123ns  (logic 0.518ns (5.678%)  route 8.605ns (94.322%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.135ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.911ns = ( 14.911 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.226ns
-    Clock Pessimism Removal (CPR):    0.180ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.623     5.226    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X50Y67         FDRE                                         r  MIPS/register_file/regmem_reg[11][5]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X50Y67         FDRE (Prop_fdre_C_Q)         0.518     5.744 r  MIPS/register_file/regmem_reg[11][5]/Q
-                         net (fo=1865, routed)        8.605    14.349    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/ADDRD5
-    SLICE_X56Y104        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMB/WADR5
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.489    14.911    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/WCLK
-    SLICE_X56Y104        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMB/CLK
-                         clock pessimism              0.180    15.091    
-                         clock uncertainty           -0.035    15.056    
-    SLICE_X56Y104        RAMD64E (Setup_ramd64e_CLK_WADR5)
-                                                     -0.236    14.820    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMB
-  -------------------------------------------------------------------
-                         required time                         14.820    
-                         arrival time                         -14.349    
-  -------------------------------------------------------------------
-                         slack                                  0.471    
-
-Slack (MET) :             0.471ns  (required time - arrival time)
-  Source:                 MIPS/register_file/regmem_reg[11][5]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMC/WADR5
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        9.123ns  (logic 0.518ns (5.678%)  route 8.605ns (94.322%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.135ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.911ns = ( 14.911 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.226ns
-    Clock Pessimism Removal (CPR):    0.180ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.623     5.226    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X50Y67         FDRE                                         r  MIPS/register_file/regmem_reg[11][5]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X50Y67         FDRE (Prop_fdre_C_Q)         0.518     5.744 r  MIPS/register_file/regmem_reg[11][5]/Q
-                         net (fo=1865, routed)        8.605    14.349    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/ADDRD5
-    SLICE_X56Y104        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMC/WADR5
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.489    14.911    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/WCLK
-    SLICE_X56Y104        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMC/CLK
-                         clock pessimism              0.180    15.091    
-                         clock uncertainty           -0.035    15.056    
-    SLICE_X56Y104        RAMD64E (Setup_ramd64e_CLK_WADR5)
-                                                     -0.236    14.820    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMC
-  -------------------------------------------------------------------
-                         required time                         14.820    
-                         arrival time                         -14.349    
-  -------------------------------------------------------------------
-                         slack                                  0.471    
-
-Slack (MET) :             0.471ns  (required time - arrival time)
-  Source:                 MIPS/register_file/regmem_reg[11][5]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMD/WADR5
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        9.123ns  (logic 0.518ns (5.678%)  route 8.605ns (94.322%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.135ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.911ns = ( 14.911 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.226ns
-    Clock Pessimism Removal (CPR):    0.180ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.623     5.226    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X50Y67         FDRE                                         r  MIPS/register_file/regmem_reg[11][5]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X50Y67         FDRE (Prop_fdre_C_Q)         0.518     5.744 r  MIPS/register_file/regmem_reg[11][5]/Q
-                         net (fo=1865, routed)        8.605    14.349    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/ADDRD5
-    SLICE_X56Y104        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMD/WADR5
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.489    14.911    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/WCLK
-    SLICE_X56Y104        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMD/CLK
-                         clock pessimism              0.180    15.091    
-                         clock uncertainty           -0.035    15.056    
-    SLICE_X56Y104        RAMD64E (Setup_ramd64e_CLK_WADR5)
-                                                     -0.236    14.820    GraphicsGUI/COLOR_IMAGE_OUT_reg_2304_2367_0_2/RAMD
-  -------------------------------------------------------------------
-                         required time                         14.820    
-                         arrival time                         -14.349    
-  -------------------------------------------------------------------
-                         slack                                  0.471    
-
-Slack (MET) :             0.578ns  (required time - arrival time)
-  Source:                 MIPS/inst_mem/inst_reg[17]_rep/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__22/SP/I
+  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__13/SP/I
                             (falling edge-triggered cell RAMS32 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.144ns  (logic 1.178ns (28.427%)  route 2.966ns (71.573%))
+  Data Path Delay:        4.113ns  (logic 1.185ns (28.808%)  route 2.928ns (71.192%))
   Logic Levels:           3  (LUT6=2 MUXF7=1)
-  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.938ns = ( 9.938 - 5.000 ) 
-    Source Clock Delay      (SCD):    5.237ns
-    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Path Skew:        -0.103ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.913ns = ( 9.913 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.204ns
+    Clock Pessimism Removal (CPR):    0.188ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -583,18 +363,18 @@ Slack (MET) :             0.578ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.634     5.237    MIPS/inst_mem/clk_IBUF_BUFG
-    SLICE_X42Y57         FDRE                                         r  MIPS/inst_mem/inst_reg[17]_rep/C
+                         net (fo=1103, routed)        1.602     5.204    MIPS/inst_mem/clk_IBUF_BUFG
+    SLICE_X56Y133        FDRE                                         r  MIPS/inst_mem/inst_reg[17]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y57         FDRE (Prop_fdre_C_Q)         0.518     5.755 r  MIPS/inst_mem/inst_reg[17]_rep/Q
-                         net (fo=128, routed)         1.431     7.185    MIPS/register_file/in2_reg[31]_i_2_0
-    SLICE_X29Y66         LUT6 (Prop_lut6_I2_O)        0.124     7.309 r  MIPS/register_file/in2_reg[23]_i_6/O
-                         net (fo=1, routed)           0.000     7.309    MIPS/register_file/in2_reg[23]_i_6_n_3
-    SLICE_X29Y66         MUXF7 (Prop_muxf7_I0_O)      0.238     7.547 r  MIPS/register_file/in2_reg[23]_i_2/O
-                         net (fo=1, routed)           0.833     8.380    MIPS/register_file/in2_reg[23]_i_2_n_3
-    SLICE_X30Y67         LUT6 (Prop_lut6_I0_O)        0.298     8.678 r  MIPS/register_file/in2_reg[23]_i_1/O
-                         net (fo=2, routed)           0.702     9.381    MIPS/data_mem/memdata_reg_0_31_0_0__22/D
-    SLICE_X34Y62         RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__22/SP/I
+    SLICE_X56Y133        FDRE (Prop_fdre_C_Q)         0.518     5.722 r  MIPS/inst_mem/inst_reg[17]/Q
+                         net (fo=129, routed)         1.777     7.499    MIPS/register_file/Q[1]
+    SLICE_X48Y141        LUT6 (Prop_lut6_I2_O)        0.124     7.623 r  MIPS/register_file/in2_reg[14]_i_13/O
+                         net (fo=1, routed)           0.000     7.623    MIPS/register_file/in2_reg[14]_i_13_n_3
+    SLICE_X48Y141        MUXF7 (Prop_muxf7_I1_O)      0.245     7.868 r  MIPS/register_file/in2_reg[14]_i_5/O
+                         net (fo=1, routed)           0.643     8.510    MIPS/register_file/in2_reg[14]_i_5_n_3
+    SLICE_X48Y140        LUT6 (Prop_lut6_I5_O)        0.298     8.808 r  MIPS/register_file/in2_reg[14]_i_1/O
+                         net (fo=2, routed)           0.509     9.318    MIPS/data_mem/memdata_reg_0_31_0_0__13/D
+    SLICE_X50Y137        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__13/SP/I
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin fall edge)
@@ -604,32 +384,32 @@ Slack (MET) :             0.578ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
                          net (fo=1, routed)           1.920     8.331    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.515     9.938    MIPS/data_mem/memdata_reg_0_31_0_0__22/WCLK
-    SLICE_X34Y62         RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__22/SP/CLK  (IS_INVERTED)
-                         clock pessimism              0.259    10.197    
-                         clock uncertainty           -0.035    10.161    
-    SLICE_X34Y62         RAMS32 (Setup_rams32_CLK_I)
-                                                     -0.203     9.958    MIPS/data_mem/memdata_reg_0_31_0_0__22/SP
+                         net (fo=1103, routed)        1.491     9.913    MIPS/data_mem/memdata_reg_0_31_0_0__13/WCLK
+    SLICE_X50Y137        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__13/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.188    10.101    
+                         clock uncertainty           -0.035    10.066    
+    SLICE_X50Y137        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.223     9.843    MIPS/data_mem/memdata_reg_0_31_0_0__13/SP
   -------------------------------------------------------------------
-                         required time                          9.958    
-                         arrival time                          -9.381    
+                         required time                          9.843    
+                         arrival time                          -9.318    
   -------------------------------------------------------------------
-                         slack                                  0.578    
+                         slack                                  0.525    
 
-Slack (MET) :             0.624ns  (required time - arrival time)
-  Source:                 MIPS/register_file/regmem_reg[11][5]/C
+Slack (MET) :             0.542ns  (required time - arrival time)
+  Source:                 MIPS/inst_mem/inst_reg[17]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMA/WADR5
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__5/SP/I
+                            (falling edge-triggered cell RAMS32 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.971ns  (logic 0.518ns (5.774%)  route 8.453ns (94.226%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.912ns = ( 14.912 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.226ns
-    Clock Pessimism Removal (CPR):    0.180ns
+  Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.068ns  (logic 1.185ns (29.130%)  route 2.883ns (70.870%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.110ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.906ns = ( 9.906 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.204ns
+    Clock Pessimism Removal (CPR):    0.188ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -645,47 +425,53 @@ Slack (MET) :             0.624ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.623     5.226    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X50Y67         FDRE                                         r  MIPS/register_file/regmem_reg[11][5]/C
+                         net (fo=1103, routed)        1.602     5.204    MIPS/inst_mem/clk_IBUF_BUFG
+    SLICE_X56Y133        FDRE                                         r  MIPS/inst_mem/inst_reg[17]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X50Y67         FDRE (Prop_fdre_C_Q)         0.518     5.744 r  MIPS/register_file/regmem_reg[11][5]/Q
-                         net (fo=1865, routed)        8.453    14.197    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/ADDRD5
-    SLICE_X56Y102        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMA/WADR5
+    SLICE_X56Y133        FDRE (Prop_fdre_C_Q)         0.518     5.722 r  MIPS/inst_mem/inst_reg[17]/Q
+                         net (fo=129, routed)         1.497     7.219    MIPS/register_file/Q[1]
+    SLICE_X45Y126        LUT6 (Prop_lut6_I2_O)        0.124     7.343 r  MIPS/register_file/in2_reg[6]_i_9/O
+                         net (fo=1, routed)           0.000     7.343    MIPS/register_file/in2_reg[6]_i_9_n_3
+    SLICE_X45Y126        MUXF7 (Prop_muxf7_I1_O)      0.245     7.588 r  MIPS/register_file/in2_reg[6]_i_3/O
+                         net (fo=1, routed)           0.826     8.414    MIPS/register_file/in2_reg[6]_i_3_n_3
+    SLICE_X45Y127        LUT6 (Prop_lut6_I1_O)        0.298     8.712 r  MIPS/register_file/in2_reg[6]_i_1/O
+                         net (fo=2, routed)           0.561     9.272    MIPS/data_mem/memdata_reg_0_31_0_0__5/D
+    SLICE_X50Y130        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__5/SP/I
   -------------------------------------------------------------------    -------------------
 
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.490    14.912    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/WCLK
-    SLICE_X56Y102        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMA/CLK
-                         clock pessimism              0.180    15.092    
-                         clock uncertainty           -0.035    15.057    
-    SLICE_X56Y102        RAMD64E (Setup_ramd64e_CLK_WADR5)
-                                                     -0.236    14.821    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMA
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clk (IN)
+                         net (fo=0)                   0.000     5.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.920     8.331    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.484     9.906    MIPS/data_mem/memdata_reg_0_31_0_0__5/WCLK
+    SLICE_X50Y130        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__5/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.188    10.094    
+                         clock uncertainty           -0.035    10.059    
+    SLICE_X50Y130        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.244     9.815    MIPS/data_mem/memdata_reg_0_31_0_0__5/SP
   -------------------------------------------------------------------
-                         required time                         14.821    
-                         arrival time                         -14.197    
+                         required time                          9.815    
+                         arrival time                          -9.272    
   -------------------------------------------------------------------
-                         slack                                  0.624    
+                         slack                                  0.542    
 
-Slack (MET) :             0.624ns  (required time - arrival time)
-  Source:                 MIPS/register_file/regmem_reg[11][5]/C
+Slack (MET) :             0.574ns  (required time - arrival time)
+  Source:                 MIPS/register_file/regmem_reg[18][3]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMB/WADR5
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__2/SP/I
+                            (falling edge-triggered cell RAMS32 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.971ns  (logic 0.518ns (5.774%)  route 8.453ns (94.226%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.912ns = ( 14.912 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.226ns
-    Clock Pessimism Removal (CPR):    0.180ns
+  Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.034ns  (logic 1.116ns (27.668%)  route 2.918ns (72.332%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.104ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.916ns = ( 9.916 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.208ns
+    Clock Pessimism Removal (CPR):    0.188ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -701,47 +487,53 @@ Slack (MET) :             0.624ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.623     5.226    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X50Y67         FDRE                                         r  MIPS/register_file/regmem_reg[11][5]/C
+                         net (fo=1103, routed)        1.606     5.208    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X59Y133        FDRE                                         r  MIPS/register_file/regmem_reg[18][3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X50Y67         FDRE (Prop_fdre_C_Q)         0.518     5.744 r  MIPS/register_file/regmem_reg[11][5]/Q
-                         net (fo=1865, routed)        8.453    14.197    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/ADDRD5
-    SLICE_X56Y102        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMB/WADR5
+    SLICE_X59Y133        FDRE (Prop_fdre_C_Q)         0.456     5.664 r  MIPS/register_file/regmem_reg[18][3]/Q
+                         net (fo=2, routed)           1.304     6.969    MIPS/register_file/regmem[18]_13[3]
+    SLICE_X57Y131        LUT6 (Prop_lut6_I1_O)        0.124     7.093 r  MIPS/register_file/in2_reg[3]_i_8/O
+                         net (fo=1, routed)           0.000     7.093    MIPS/register_file/in2_reg[3]_i_8_n_3
+    SLICE_X57Y131        MUXF7 (Prop_muxf7_I0_O)      0.238     7.331 r  MIPS/register_file/in2_reg[3]_i_3/O
+                         net (fo=1, routed)           0.923     8.253    MIPS/register_file/in2_reg[3]_i_3_n_3
+    SLICE_X57Y135        LUT6 (Prop_lut6_I1_O)        0.298     8.551 r  MIPS/register_file/in2_reg[3]_i_1/O
+                         net (fo=2, routed)           0.691     9.242    MIPS/data_mem/memdata_reg_0_31_0_0__2/D
+    SLICE_X42Y135        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__2/SP/I
   -------------------------------------------------------------------    -------------------
 
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.490    14.912    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/WCLK
-    SLICE_X56Y102        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMB/CLK
-                         clock pessimism              0.180    15.092    
-                         clock uncertainty           -0.035    15.057    
-    SLICE_X56Y102        RAMD64E (Setup_ramd64e_CLK_WADR5)
-                                                     -0.236    14.821    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMB
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clk (IN)
+                         net (fo=0)                   0.000     5.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.920     8.331    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.494     9.916    MIPS/data_mem/memdata_reg_0_31_0_0__2/WCLK
+    SLICE_X42Y135        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__2/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.188    10.104    
+                         clock uncertainty           -0.035    10.069    
+    SLICE_X42Y135        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.253     9.816    MIPS/data_mem/memdata_reg_0_31_0_0__2/SP
   -------------------------------------------------------------------
-                         required time                         14.821    
-                         arrival time                         -14.197    
+                         required time                          9.816    
+                         arrival time                          -9.242    
   -------------------------------------------------------------------
-                         slack                                  0.624    
+                         slack                                  0.574    
 
-Slack (MET) :             0.624ns  (required time - arrival time)
-  Source:                 MIPS/register_file/regmem_reg[11][5]/C
+Slack (MET) :             0.609ns  (required time - arrival time)
+  Source:                 MIPS/inst_mem/inst_reg[17]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMC/WADR5
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__1/SP/I
+                            (falling edge-triggered cell RAMS32 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.971ns  (logic 0.518ns (5.774%)  route 8.453ns (94.226%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.912ns = ( 14.912 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.226ns
-    Clock Pessimism Removal (CPR):    0.180ns
+  Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.025ns  (logic 1.181ns (29.341%)  route 2.844ns (70.659%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.107ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.909ns = ( 9.909 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.204ns
+    Clock Pessimism Removal (CPR):    0.188ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -757,47 +549,53 @@ Slack (MET) :             0.624ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.623     5.226    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X50Y67         FDRE                                         r  MIPS/register_file/regmem_reg[11][5]/C
+                         net (fo=1103, routed)        1.602     5.204    MIPS/inst_mem/clk_IBUF_BUFG
+    SLICE_X56Y133        FDRE                                         r  MIPS/inst_mem/inst_reg[17]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X50Y67         FDRE (Prop_fdre_C_Q)         0.518     5.744 r  MIPS/register_file/regmem_reg[11][5]/Q
-                         net (fo=1865, routed)        8.453    14.197    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/ADDRD5
-    SLICE_X56Y102        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMC/WADR5
+    SLICE_X56Y133        FDRE (Prop_fdre_C_Q)         0.518     5.722 r  MIPS/inst_mem/inst_reg[17]/Q
+                         net (fo=129, routed)         1.278     7.001    MIPS/register_file/Q[1]
+    SLICE_X50Y127        LUT6 (Prop_lut6_I2_O)        0.124     7.125 r  MIPS/register_file/in2_reg[2]_i_8/O
+                         net (fo=1, routed)           0.000     7.125    MIPS/register_file/in2_reg[2]_i_8_n_3
+    SLICE_X50Y127        MUXF7 (Prop_muxf7_I0_O)      0.241     7.366 r  MIPS/register_file/in2_reg[2]_i_3/O
+                         net (fo=1, routed)           0.937     8.303    MIPS/register_file/in2_reg[2]_i_3_n_3
+    SLICE_X47Y130        LUT6 (Prop_lut6_I1_O)        0.298     8.601 r  MIPS/register_file/in2_reg[2]_i_1/O
+                         net (fo=2, routed)           0.629     9.229    MIPS/data_mem/memdata_reg_0_31_0_0__1/D
+    SLICE_X50Y132        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__1/SP/I
   -------------------------------------------------------------------    -------------------
 
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.490    14.912    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/WCLK
-    SLICE_X56Y102        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMC/CLK
-                         clock pessimism              0.180    15.092    
-                         clock uncertainty           -0.035    15.057    
-    SLICE_X56Y102        RAMD64E (Setup_ramd64e_CLK_WADR5)
-                                                     -0.236    14.821    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMC
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clk (IN)
+                         net (fo=0)                   0.000     5.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.920     8.331    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.487     9.909    MIPS/data_mem/memdata_reg_0_31_0_0__1/WCLK
+    SLICE_X50Y132        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__1/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.188    10.097    
+                         clock uncertainty           -0.035    10.062    
+    SLICE_X50Y132        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.223     9.839    MIPS/data_mem/memdata_reg_0_31_0_0__1/SP
   -------------------------------------------------------------------
-                         required time                         14.821    
-                         arrival time                         -14.197    
+                         required time                          9.839    
+                         arrival time                          -9.229    
   -------------------------------------------------------------------
-                         slack                                  0.624    
+                         slack                                  0.609    
 
-Slack (MET) :             0.624ns  (required time - arrival time)
-  Source:                 MIPS/register_file/regmem_reg[11][5]/C
+Slack (MET) :             0.621ns  (required time - arrival time)
+  Source:                 MIPS/inst_mem/inst_reg[17]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMD/WADR5
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__4/SP/I
+                            (falling edge-triggered cell RAMS32 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        8.971ns  (logic 0.518ns (5.774%)  route 8.453ns (94.226%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.912ns = ( 14.912 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.226ns
-    Clock Pessimism Removal (CPR):    0.180ns
+  Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.011ns  (logic 1.187ns (29.597%)  route 2.824ns (70.403%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.110ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.906ns = ( 9.906 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.204ns
+    Clock Pessimism Removal (CPR):    0.188ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -813,34 +611,40 @@ Slack (MET) :             0.624ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.623     5.226    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X50Y67         FDRE                                         r  MIPS/register_file/regmem_reg[11][5]/C
+                         net (fo=1103, routed)        1.602     5.204    MIPS/inst_mem/clk_IBUF_BUFG
+    SLICE_X56Y133        FDRE                                         r  MIPS/inst_mem/inst_reg[17]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X50Y67         FDRE (Prop_fdre_C_Q)         0.518     5.744 r  MIPS/register_file/regmem_reg[11][5]/Q
-                         net (fo=1865, routed)        8.453    14.197    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/ADDRD5
-    SLICE_X56Y102        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMD/WADR5
+    SLICE_X56Y133        FDRE (Prop_fdre_C_Q)         0.518     5.722 r  MIPS/inst_mem/inst_reg[17]/Q
+                         net (fo=129, routed)         1.236     6.958    MIPS/register_file/Q[1]
+    SLICE_X60Y137        LUT6 (Prop_lut6_I2_O)        0.124     7.082 r  MIPS/register_file/in2_reg[5]_i_7/O
+                         net (fo=1, routed)           0.000     7.082    MIPS/register_file/in2_reg[5]_i_7_n_3
+    SLICE_X60Y137        MUXF7 (Prop_muxf7_I1_O)      0.247     7.329 r  MIPS/register_file/in2_reg[5]_i_2/O
+                         net (fo=1, routed)           0.737     8.066    MIPS/register_file/in2_reg[5]_i_2_n_3
+    SLICE_X58Y135        LUT6 (Prop_lut6_I0_O)        0.298     8.364 r  MIPS/register_file/in2_reg[5]_i_1/O
+                         net (fo=2, routed)           0.851     9.215    MIPS/data_mem/memdata_reg_0_31_0_0__4/D
+    SLICE_X50Y130        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__4/SP/I
   -------------------------------------------------------------------    -------------------
 
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.490    14.912    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/WCLK
-    SLICE_X56Y102        RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMD/CLK
-                         clock pessimism              0.180    15.092    
-                         clock uncertainty           -0.035    15.057    
-    SLICE_X56Y102        RAMD64E (Setup_ramd64e_CLK_WADR5)
-                                                     -0.236    14.821    GraphicsGUI/COLOR_IMAGE_OUT_reg_3520_3583_6_8/RAMD
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clk (IN)
+                         net (fo=0)                   0.000     5.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.920     8.331    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.484     9.906    MIPS/data_mem/memdata_reg_0_31_0_0__4/WCLK
+    SLICE_X50Y130        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__4/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.188    10.094    
+                         clock uncertainty           -0.035    10.059    
+    SLICE_X50Y130        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.223     9.836    MIPS/data_mem/memdata_reg_0_31_0_0__4/SP
   -------------------------------------------------------------------
-                         required time                         14.821    
-                         arrival time                         -14.197    
+                         required time                          9.836    
+                         arrival time                          -9.215    
   -------------------------------------------------------------------
-                         slack                                  0.624    
+                         slack                                  0.621    
 
-Slack (MET) :             0.632ns  (required time - arrival time)
+Slack (MET) :             0.651ns  (required time - arrival time)
   Source:                 MIPS/inst_mem/inst_reg[17]_rep/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__30/SP/I
@@ -848,11 +652,11 @@ Slack (MET) :             0.632ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.032ns  (logic 1.178ns (29.215%)  route 2.854ns (70.785%))
+  Data Path Delay:        4.003ns  (logic 1.125ns (28.101%)  route 2.878ns (71.899%))
   Logic Levels:           3  (LUT6=2 MUXF7=1)
-  Clock Path Skew:        -0.048ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.930ns = ( 9.930 - 5.000 ) 
-    Source Clock Delay      (SCD):    5.237ns
+  Clock Path Skew:        -0.057ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.906ns = ( 9.906 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.222ns
     Clock Pessimism Removal (CPR):    0.259ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -869,18 +673,18 @@ Slack (MET) :             0.632ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.634     5.237    MIPS/inst_mem/clk_IBUF_BUFG
-    SLICE_X42Y57         FDRE                                         r  MIPS/inst_mem/inst_reg[17]_rep/C
+                         net (fo=1103, routed)        1.620     5.222    MIPS/inst_mem/clk_IBUF_BUFG
+    SLICE_X41Y138        FDRE                                         r  MIPS/inst_mem/inst_reg[17]_rep/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y57         FDRE (Prop_fdre_C_Q)         0.518     5.755 r  MIPS/inst_mem/inst_reg[17]_rep/Q
-                         net (fo=128, routed)         1.464     7.219    MIPS/register_file/in2_reg[31]_i_2_0
-    SLICE_X31Y69         LUT6 (Prop_lut6_I2_O)        0.124     7.343 r  MIPS/register_file/in2_reg[31]_i_12/O
-                         net (fo=1, routed)           0.000     7.343    MIPS/register_file/in2_reg[31]_i_12_n_3
-    SLICE_X31Y69         MUXF7 (Prop_muxf7_I0_O)      0.238     7.581 r  MIPS/register_file/in2_reg[31]_i_5/O
-                         net (fo=1, routed)           0.572     8.153    MIPS/register_file/in2_reg[31]_i_5_n_3
-    SLICE_X32Y67         LUT6 (Prop_lut6_I5_O)        0.298     8.451 r  MIPS/register_file/in2_reg[31]_i_1/O
-                         net (fo=2, routed)           0.818     9.269    MIPS/data_mem/memdata_reg_0_31_0_0__30/D
-    SLICE_X46Y65         RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__30/SP/I
+    SLICE_X41Y138        FDRE (Prop_fdre_C_Q)         0.456     5.678 r  MIPS/inst_mem/inst_reg[17]_rep/Q
+                         net (fo=128, routed)         1.369     7.047    MIPS/register_file/in2_reg[31]_i_2_0
+    SLICE_X30Y130        LUT6 (Prop_lut6_I2_O)        0.124     7.171 r  MIPS/register_file/in2_reg[31]_i_9/O
+                         net (fo=1, routed)           0.000     7.171    MIPS/register_file/in2_reg[31]_i_9_n_3
+    SLICE_X30Y130        MUXF7 (Prop_muxf7_I1_O)      0.247     7.418 r  MIPS/register_file/in2_reg[31]_i_3/O
+                         net (fo=1, routed)           0.672     8.090    MIPS/register_file/in2_reg[31]_i_3_n_3
+    SLICE_X34Y130        LUT6 (Prop_lut6_I1_O)        0.298     8.388 r  MIPS/register_file/in2_reg[31]_i_1/O
+                         net (fo=2, routed)           0.838     9.226    MIPS/data_mem/memdata_reg_0_31_0_0__30/D
+    SLICE_X50Y130        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__30/SP/I
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin fall edge)
@@ -890,17 +694,263 @@ Slack (MET) :             0.632ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
                          net (fo=1, routed)           1.920     8.331    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        1.507     9.930    MIPS/data_mem/memdata_reg_0_31_0_0__30/WCLK
-    SLICE_X46Y65         RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__30/SP/CLK  (IS_INVERTED)
-                         clock pessimism              0.259    10.189    
-                         clock uncertainty           -0.035    10.153    
-    SLICE_X46Y65         RAMS32 (Setup_rams32_CLK_I)
-                                                     -0.253     9.900    MIPS/data_mem/memdata_reg_0_31_0_0__30/SP
+                         net (fo=1103, routed)        1.484     9.906    MIPS/data_mem/memdata_reg_0_31_0_0__30/WCLK
+    SLICE_X50Y130        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__30/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.259    10.165    
+                         clock uncertainty           -0.035    10.130    
+    SLICE_X50Y130        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.253     9.877    MIPS/data_mem/memdata_reg_0_31_0_0__30/SP
   -------------------------------------------------------------------
-                         required time                          9.900    
-                         arrival time                          -9.269    
+                         required time                          9.877    
+                         arrival time                          -9.226    
   -------------------------------------------------------------------
-                         slack                                  0.632    
+                         slack                                  0.651    
+
+Slack (MET) :             0.652ns  (required time - arrival time)
+  Source:                 MIPS/inst_mem/inst_reg[17]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__0/SP/I
+                            (falling edge-triggered cell RAMS32 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.952ns  (logic 1.178ns (29.805%)  route 2.774ns (70.195%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.107ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.909ns = ( 9.909 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.204ns
+    Clock Pessimism Removal (CPR):    0.188ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.602     5.204    MIPS/inst_mem/clk_IBUF_BUFG
+    SLICE_X56Y133        FDRE                                         r  MIPS/inst_mem/inst_reg[17]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X56Y133        FDRE (Prop_fdre_C_Q)         0.518     5.722 r  MIPS/inst_mem/inst_reg[17]/Q
+                         net (fo=129, routed)         1.281     7.003    MIPS/register_file/Q[1]
+    SLICE_X55Y128        LUT6 (Prop_lut6_I2_O)        0.124     7.127 r  MIPS/register_file/in2_reg[1]_i_6/O
+                         net (fo=1, routed)           0.000     7.127    MIPS/register_file/in2_reg[1]_i_6_n_3
+    SLICE_X55Y128        MUXF7 (Prop_muxf7_I0_O)      0.238     7.365 r  MIPS/register_file/in2_reg[1]_i_2/O
+                         net (fo=1, routed)           0.710     8.075    MIPS/register_file/in2_reg[1]_i_2_n_3
+    SLICE_X53Y127        LUT6 (Prop_lut6_I0_O)        0.298     8.373 r  MIPS/register_file/in2_reg[1]_i_1/O
+                         net (fo=2, routed)           0.783     9.157    MIPS/data_mem/memdata_reg_0_31_0_0__0/D
+    SLICE_X50Y132        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__0/SP/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clk (IN)
+                         net (fo=0)                   0.000     5.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.920     8.331    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.487     9.909    MIPS/data_mem/memdata_reg_0_31_0_0__0/WCLK
+    SLICE_X50Y132        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__0/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.188    10.097    
+                         clock uncertainty           -0.035    10.062    
+    SLICE_X50Y132        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.253     9.809    MIPS/data_mem/memdata_reg_0_31_0_0__0/SP
+  -------------------------------------------------------------------
+                         required time                          9.809    
+                         arrival time                          -9.157    
+  -------------------------------------------------------------------
+                         slack                                  0.652    
+
+Slack (MET) :             0.654ns  (required time - arrival time)
+  Source:                 MIPS/inst_mem/inst_reg[18]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__7/SP/I
+                            (falling edge-triggered cell RAMS32 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.003ns  (logic 1.068ns (26.683%)  route 2.935ns (73.317%))
+  Logic Levels:           2  (LUT6=1 MUXF7=1)
+  Clock Path Skew:        -0.055ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.906ns = ( 9.906 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.220ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.618     5.220    MIPS/inst_mem/clk_IBUF_BUFG
+    SLICE_X43Y141        FDRE                                         r  MIPS/inst_mem/inst_reg[18]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y141        FDRE (Prop_fdre_C_Q)         0.456     5.676 r  MIPS/inst_mem/inst_reg[18]/Q
+                         net (fo=129, routed)         1.569     7.245    MIPS/register_file/Q[2]
+    SLICE_X60Y129        MUXF7 (Prop_muxf7_S_O)       0.314     7.559 r  MIPS/register_file/in2_reg[8]_i_5/O
+                         net (fo=1, routed)           0.736     8.295    MIPS/register_file/in2_reg[8]_i_5_n_3
+    SLICE_X57Y129        LUT6 (Prop_lut6_I5_O)        0.298     8.593 r  MIPS/register_file/in2_reg[8]_i_1/O
+                         net (fo=2, routed)           0.630     9.223    MIPS/data_mem/memdata_reg_0_31_0_0__7/D
+    SLICE_X50Y129        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__7/SP/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clk (IN)
+                         net (fo=0)                   0.000     5.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.920     8.331    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.484     9.906    MIPS/data_mem/memdata_reg_0_31_0_0__7/WCLK
+    SLICE_X50Y129        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__7/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.259    10.165    
+                         clock uncertainty           -0.035    10.130    
+    SLICE_X50Y129        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.253     9.877    MIPS/data_mem/memdata_reg_0_31_0_0__7/SP
+  -------------------------------------------------------------------
+                         required time                          9.877    
+                         arrival time                          -9.223    
+  -------------------------------------------------------------------
+                         slack                                  0.654    
+
+Slack (MET) :             0.663ns  (required time - arrival time)
+  Source:                 MIPS/inst_mem/inst_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__6/SP/I
+                            (falling edge-triggered cell RAMS32 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.045ns  (logic 1.116ns (27.590%)  route 2.929ns (72.410%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.054ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.906ns = ( 9.906 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.219ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.617     5.219    MIPS/inst_mem/clk_IBUF_BUFG
+    SLICE_X45Y139        FDRE                                         r  MIPS/inst_mem/inst_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y139        FDRE (Prop_fdre_C_Q)         0.456     5.675 r  MIPS/inst_mem/inst_reg[16]/Q
+                         net (fo=129, routed)         1.537     7.212    MIPS/register_file/Q[0]
+    SLICE_X59Y131        LUT6 (Prop_lut6_I4_O)        0.124     7.336 r  MIPS/register_file/in2_reg[7]_i_8/O
+                         net (fo=1, routed)           0.000     7.336    MIPS/register_file/in2_reg[7]_i_8_n_3
+    SLICE_X59Y131        MUXF7 (Prop_muxf7_I0_O)      0.238     7.574 r  MIPS/register_file/in2_reg[7]_i_3/O
+                         net (fo=1, routed)           0.900     8.474    MIPS/register_file/in2_reg[7]_i_3_n_3
+    SLICE_X55Y129        LUT6 (Prop_lut6_I1_O)        0.298     8.772 r  MIPS/register_file/in2_reg[7]_i_1/O
+                         net (fo=2, routed)           0.492     9.264    MIPS/data_mem/memdata_reg_0_31_0_0__6/D
+    SLICE_X50Y129        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__6/SP/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clk (IN)
+                         net (fo=0)                   0.000     5.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.920     8.331    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.484     9.906    MIPS/data_mem/memdata_reg_0_31_0_0__6/WCLK
+    SLICE_X50Y129        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__6/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.259    10.165    
+                         clock uncertainty           -0.035    10.130    
+    SLICE_X50Y129        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.203     9.927    MIPS/data_mem/memdata_reg_0_31_0_0__6/SP
+  -------------------------------------------------------------------
+                         required time                          9.927    
+                         arrival time                          -9.264    
+  -------------------------------------------------------------------
+                         slack                                  0.663    
+
+Slack (MET) :             0.673ns  (required time - arrival time)
+  Source:                 MIPS/inst_mem/inst_reg[17]_rep/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/data_mem/memdata_reg_0_31_0_0__28/SP/I
+                            (falling edge-triggered cell RAMS32 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.040ns  (logic 1.123ns (27.798%)  route 2.917ns (72.202%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.029ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.917ns = ( 9.917 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.222ns
+    Clock Pessimism Removal (CPR):    0.276ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.620     5.222    MIPS/inst_mem/clk_IBUF_BUFG
+    SLICE_X41Y138        FDRE                                         r  MIPS/inst_mem/inst_reg[17]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y138        FDRE (Prop_fdre_C_Q)         0.456     5.678 r  MIPS/inst_mem/inst_reg[17]_rep/Q
+                         net (fo=128, routed)         1.388     7.066    MIPS/register_file/in2_reg[31]_i_2_0
+    SLICE_X33Y128        LUT6 (Prop_lut6_I2_O)        0.124     7.190 r  MIPS/register_file/in2_reg[29]_i_9/O
+                         net (fo=1, routed)           0.000     7.190    MIPS/register_file/in2_reg[29]_i_9_n_3
+    SLICE_X33Y128        MUXF7 (Prop_muxf7_I1_O)      0.245     7.435 r  MIPS/register_file/in2_reg[29]_i_3/O
+                         net (fo=1, routed)           0.793     8.227    MIPS/register_file/in2_reg[29]_i_3_n_3
+    SLICE_X36Y128        LUT6 (Prop_lut6_I1_O)        0.298     8.525 r  MIPS/register_file/in2_reg[29]_i_1/O
+                         net (fo=2, routed)           0.737     9.262    MIPS/data_mem/memdata_reg_0_31_0_0__28/D
+    SLICE_X38Y133        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__28/SP/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clk (IN)
+                         net (fo=0)                   0.000     5.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411     6.411 f  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.920     8.331    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     8.422 f  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        1.495     9.917    MIPS/data_mem/memdata_reg_0_31_0_0__28/WCLK
+    SLICE_X38Y133        RAMS32                                       r  MIPS/data_mem/memdata_reg_0_31_0_0__28/SP/CLK  (IS_INVERTED)
+                         clock pessimism              0.276    10.193    
+                         clock uncertainty           -0.035    10.158    
+    SLICE_X38Y133        RAMS32 (Setup_rams32_CLK_I)
+                                                     -0.223     9.935    MIPS/data_mem/memdata_reg_0_31_0_0__28/SP
+  -------------------------------------------------------------------
+                         required time                          9.935    
+                         arrival time                          -9.262    
+  -------------------------------------------------------------------
+                         slack                                  0.673    
 
 
 
@@ -908,7 +958,7 @@ Slack (MET) :             0.632ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.068ns  (arrival time - required time)
+Slack (MET) :             0.036ns  (arrival time - required time)
   Source:                 GraphicsGUI/image_pix_reg[8]/C
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            MIPS/register_file/regmem_reg[12][8]/D
@@ -916,60 +966,60 @@ Slack (MET) :             0.068ns  (arrival time - required time)
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.385ns  (logic 0.141ns (36.590%)  route 0.244ns (63.410%))
+  Data Path Delay:        0.366ns  (logic 0.141ns (38.520%)  route 0.225ns (61.480%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.260ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.980ns
+    Source Clock Delay      (SCD):    1.469ns
+    Clock Pessimism Removal (CPR):    0.250ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.550     1.469    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X47Y121        FDSE                                         r  GraphicsGUI/image_pix_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X47Y121        FDSE (Prop_fdse_C_Q)         0.141     1.610 r  GraphicsGUI/image_pix_reg[8]/Q
+                         net (fo=1, routed)           0.225     1.835    MIPS/register_file/imagein[5]
+    SLICE_X52Y122        FDRE                                         r  MIPS/register_file/regmem_reg[12][8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.814     1.980    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X52Y122        FDRE                                         r  MIPS/register_file/regmem_reg[12][8]/C
+                         clock pessimism             -0.250     1.729    
+    SLICE_X52Y122        FDRE (Hold_fdre_C_D)         0.070     1.799    MIPS/register_file/regmem_reg[12][8]
+  -------------------------------------------------------------------
+                         required time                         -1.799    
+                         arrival time                           1.835    
+  -------------------------------------------------------------------
+                         slack                                  0.036    
+
+Slack (MET) :             0.051ns  (arrival time - required time)
+  Source:                 GraphicsGUI/image_pix_reg[2]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/register_file/regmem_reg[12][2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.382ns  (logic 0.164ns (42.953%)  route 0.218ns (57.047%))
   Logic Levels:           0  
   Clock Path Skew:        0.265ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.990ns
-    Source Clock Delay      (SCD):    1.474ns
-    Clock Pessimism Removal (CPR):    0.250ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.555     1.474    GraphicsGUI/clk_IBUF_BUFG
-    SLICE_X57Y72         FDSE                                         r  GraphicsGUI/image_pix_reg[8]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X57Y72         FDSE (Prop_fdse_C_Q)         0.141     1.615 r  GraphicsGUI/image_pix_reg[8]/Q
-                         net (fo=1, routed)           0.244     1.860    MIPS/register_file/imagein[5]
-    SLICE_X50Y69         FDRE                                         r  MIPS/register_file/regmem_reg[12][8]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.825     1.990    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X50Y69         FDRE                                         r  MIPS/register_file/regmem_reg[12][8]/C
-                         clock pessimism             -0.250     1.739    
-    SLICE_X50Y69         FDRE (Hold_fdre_C_D)         0.052     1.791    MIPS/register_file/regmem_reg[12][8]
-  -------------------------------------------------------------------
-                         required time                         -1.791    
-                         arrival time                           1.860    
-  -------------------------------------------------------------------
-                         slack                                  0.068    
-
-Slack (MET) :             0.091ns  (arrival time - required time)
-  Source:                 MIPS/register_file/regmem_reg[14][0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_1280_1343_0_2/RAMA/I
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.496ns  (logic 0.164ns (33.058%)  route 0.332ns (66.942%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.258ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.984ns
-    Source Clock Delay      (SCD):    1.475ns
+    Source Clock Delay      (SCD):    1.468ns
     Clock Pessimism Removal (CPR):    0.250ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -981,12 +1031,12 @@ Slack (MET) :             0.091ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.556     1.475    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X46Y71         FDRE                                         r  MIPS/register_file/regmem_reg[14][0]/C
+                         net (fo=1103, routed)        0.549     1.468    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X54Y120        FDSE                                         r  GraphicsGUI/image_pix_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X46Y71         FDRE (Prop_fdre_C_Q)         0.164     1.639 r  MIPS/register_file/regmem_reg[14][0]/Q
-                         net (fo=66, routed)          0.332     1.971    GraphicsGUI/COLOR_IMAGE_OUT_reg_1280_1343_0_2/DIA
-    SLICE_X56Y75         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1280_1343_0_2/RAMA/I
+    SLICE_X54Y120        FDSE (Prop_fdse_C_Q)         0.164     1.632 r  GraphicsGUI/image_pix_reg[2]/Q
+                         net (fo=1, routed)           0.218     1.850    MIPS/register_file/imagein[2]
+    SLICE_X48Y121        FDRE                                         r  MIPS/register_file/regmem_reg[12][2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -996,30 +1046,29 @@ Slack (MET) :             0.091ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.819     1.984    GraphicsGUI/COLOR_IMAGE_OUT_reg_1280_1343_0_2/WCLK
-    SLICE_X56Y75         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1280_1343_0_2/RAMA/CLK
+                         net (fo=1103, routed)        0.819     1.984    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X48Y121        FDRE                                         r  MIPS/register_file/regmem_reg[12][2]/C
                          clock pessimism             -0.250     1.733    
-    SLICE_X56Y75         RAMD64E (Hold_ramd64e_CLK_I)
-                                                      0.147     1.880    GraphicsGUI/COLOR_IMAGE_OUT_reg_1280_1343_0_2/RAMA
+    SLICE_X48Y121        FDRE (Hold_fdre_C_D)         0.066     1.799    MIPS/register_file/regmem_reg[12][2]
   -------------------------------------------------------------------
-                         required time                         -1.880    
-                         arrival time                           1.971    
+                         required time                         -1.799    
+                         arrival time                           1.850    
   -------------------------------------------------------------------
-                         slack                                  0.091    
+                         slack                                  0.051    
 
-Slack (MET) :             0.092ns  (arrival time - required time)
-  Source:                 MIPS/register_file/regmem_reg[14][2]/C
+Slack (MET) :             0.062ns  (arrival time - required time)
+  Source:                 GraphicsGUI/image_pix_reg[6]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_1984_2047_0_2/RAMC/I
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/register_file/regmem_reg[12][6]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.492ns  (logic 0.141ns (28.679%)  route 0.351ns (71.321%))
+  Data Path Delay:        0.373ns  (logic 0.141ns (37.798%)  route 0.232ns (62.202%))
   Logic Levels:           0  
-  Clock Path Skew:        0.256ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.985ns
-    Source Clock Delay      (SCD):    1.478ns
+  Clock Path Skew:        0.265ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.980ns
+    Source Clock Delay      (SCD):    1.464ns
     Clock Pessimism Removal (CPR):    0.250ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1031,12 +1080,12 @@ Slack (MET) :             0.092ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.559     1.478    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X48Y68         FDRE                                         r  MIPS/register_file/regmem_reg[14][2]/C
+                         net (fo=1103, routed)        0.545     1.464    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X55Y125        FDRE                                         r  GraphicsGUI/image_pix_reg[6]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y68         FDRE (Prop_fdre_C_Q)         0.141     1.619 r  MIPS/register_file/regmem_reg[14][2]/Q
-                         net (fo=66, routed)          0.351     1.970    GraphicsGUI/COLOR_IMAGE_OUT_reg_1984_2047_0_2/DIC
-    SLICE_X56Y73         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1984_2047_0_2/RAMC/I
+    SLICE_X55Y125        FDRE (Prop_fdre_C_Q)         0.141     1.605 r  GraphicsGUI/image_pix_reg[6]/Q
+                         net (fo=3, routed)           0.232     1.837    MIPS/register_file/imagein[4]
+    SLICE_X48Y125        FDRE                                         r  MIPS/register_file/regmem_reg[12][6]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1046,328 +1095,29 @@ Slack (MET) :             0.092ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.820     1.985    GraphicsGUI/COLOR_IMAGE_OUT_reg_1984_2047_0_2/WCLK
-    SLICE_X56Y73         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1984_2047_0_2/RAMC/CLK
-                         clock pessimism             -0.250     1.734    
-    SLICE_X56Y73         RAMD64E (Hold_ramd64e_CLK_I)
-                                                      0.144     1.878    GraphicsGUI/COLOR_IMAGE_OUT_reg_1984_2047_0_2/RAMC
+                         net (fo=1103, routed)        0.815     1.980    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X48Y125        FDRE                                         r  MIPS/register_file/regmem_reg[12][6]/C
+                         clock pessimism             -0.250     1.729    
+    SLICE_X48Y125        FDRE (Hold_fdre_C_D)         0.046     1.775    MIPS/register_file/regmem_reg[12][6]
   -------------------------------------------------------------------
-                         required time                         -1.878    
-                         arrival time                           1.970    
+                         required time                         -1.775    
+                         arrival time                           1.837    
   -------------------------------------------------------------------
-                         slack                                  0.092    
+                         slack                                  0.062    
 
-Slack (MET) :             0.114ns  (arrival time - required time)
-  Source:                 GraphicsGUI/image_pix_reg[1]/C
+Slack (MET) :             0.069ns  (arrival time - required time)
+  Source:                 GraphicsGUI/image_pix_reg[10]/C
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            MIPS/register_file/regmem_reg[12][1]/D
+  Destination:            MIPS/register_file/regmem_reg[12][10]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.432ns  (logic 0.141ns (32.634%)  route 0.291ns (67.366%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.994ns
-    Source Clock Delay      (SCD):    1.477ns
-    Clock Pessimism Removal (CPR):    0.250ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.558     1.477    GraphicsGUI/clk_IBUF_BUFG
-    SLICE_X57Y68         FDSE                                         r  GraphicsGUI/image_pix_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X57Y68         FDSE (Prop_fdse_C_Q)         0.141     1.618 r  GraphicsGUI/image_pix_reg[1]/Q
-                         net (fo=1, routed)           0.291     1.909    MIPS/register_file/imagein[1]
-    SLICE_X46Y67         FDRE                                         r  MIPS/register_file/regmem_reg[12][1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.829     1.994    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X46Y67         FDRE                                         r  MIPS/register_file/regmem_reg[12][1]/C
-                         clock pessimism             -0.250     1.743    
-    SLICE_X46Y67         FDRE (Hold_fdre_C_D)         0.052     1.795    MIPS/register_file/regmem_reg[12][1]
-  -------------------------------------------------------------------
-                         required time                         -1.795    
-                         arrival time                           1.909    
-  -------------------------------------------------------------------
-                         slack                                  0.114    
-
-Slack (MET) :             0.121ns  (arrival time - required time)
-  Source:                 MIPS/register_file/regmem_reg[11][0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMA/WADR0
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.684ns  (logic 0.164ns (23.991%)  route 0.520ns (76.009%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.253ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.984ns
-    Source Clock Delay      (SCD):    1.480ns
-    Clock Pessimism Removal (CPR):    0.250ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.561     1.480    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X42Y68         FDRE                                         r  MIPS/register_file/regmem_reg[11][0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X42Y68         FDRE (Prop_fdre_C_Q)         0.164     1.644 r  MIPS/register_file/regmem_reg[11][0]/Q
-                         net (fo=1436, routed)        0.520     2.164    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/ADDRD0
-    SLICE_X56Y74         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMA/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.819     1.984    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/WCLK
-    SLICE_X56Y74         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMA/CLK
-                         clock pessimism             -0.250     1.733    
-    SLICE_X56Y74         RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     2.043    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMA
-  -------------------------------------------------------------------
-                         required time                         -2.043    
-                         arrival time                           2.164    
-  -------------------------------------------------------------------
-                         slack                                  0.121    
-
-Slack (MET) :             0.121ns  (arrival time - required time)
-  Source:                 MIPS/register_file/regmem_reg[11][0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMB/WADR0
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.684ns  (logic 0.164ns (23.991%)  route 0.520ns (76.009%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.253ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.984ns
-    Source Clock Delay      (SCD):    1.480ns
-    Clock Pessimism Removal (CPR):    0.250ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.561     1.480    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X42Y68         FDRE                                         r  MIPS/register_file/regmem_reg[11][0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X42Y68         FDRE (Prop_fdre_C_Q)         0.164     1.644 r  MIPS/register_file/regmem_reg[11][0]/Q
-                         net (fo=1436, routed)        0.520     2.164    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/ADDRD0
-    SLICE_X56Y74         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMB/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.819     1.984    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/WCLK
-    SLICE_X56Y74         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMB/CLK
-                         clock pessimism             -0.250     1.733    
-    SLICE_X56Y74         RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     2.043    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMB
-  -------------------------------------------------------------------
-                         required time                         -2.043    
-                         arrival time                           2.164    
-  -------------------------------------------------------------------
-                         slack                                  0.121    
-
-Slack (MET) :             0.121ns  (arrival time - required time)
-  Source:                 MIPS/register_file/regmem_reg[11][0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMC/WADR0
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.684ns  (logic 0.164ns (23.991%)  route 0.520ns (76.009%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.253ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.984ns
-    Source Clock Delay      (SCD):    1.480ns
-    Clock Pessimism Removal (CPR):    0.250ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.561     1.480    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X42Y68         FDRE                                         r  MIPS/register_file/regmem_reg[11][0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X42Y68         FDRE (Prop_fdre_C_Q)         0.164     1.644 r  MIPS/register_file/regmem_reg[11][0]/Q
-                         net (fo=1436, routed)        0.520     2.164    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/ADDRD0
-    SLICE_X56Y74         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMC/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.819     1.984    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/WCLK
-    SLICE_X56Y74         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMC/CLK
-                         clock pessimism             -0.250     1.733    
-    SLICE_X56Y74         RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     2.043    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMC
-  -------------------------------------------------------------------
-                         required time                         -2.043    
-                         arrival time                           2.164    
-  -------------------------------------------------------------------
-                         slack                                  0.121    
-
-Slack (MET) :             0.121ns  (arrival time - required time)
-  Source:                 MIPS/register_file/regmem_reg[11][0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMD/WADR0
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.684ns  (logic 0.164ns (23.991%)  route 0.520ns (76.009%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.253ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.984ns
-    Source Clock Delay      (SCD):    1.480ns
-    Clock Pessimism Removal (CPR):    0.250ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.561     1.480    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X42Y68         FDRE                                         r  MIPS/register_file/regmem_reg[11][0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X42Y68         FDRE (Prop_fdre_C_Q)         0.164     1.644 r  MIPS/register_file/regmem_reg[11][0]/Q
-                         net (fo=1436, routed)        0.520     2.164    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/ADDRD0
-    SLICE_X56Y74         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMD/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.819     1.984    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/WCLK
-    SLICE_X56Y74         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMD/CLK
-                         clock pessimism             -0.250     1.733    
-    SLICE_X56Y74         RAMD64E (Hold_ramd64e_CLK_WADR0)
-                                                      0.310     2.043    GraphicsGUI/COLOR_IMAGE_OUT_reg_1344_1407_0_2/RAMD
-  -------------------------------------------------------------------
-                         required time                         -2.043    
-                         arrival time                           2.164    
-  -------------------------------------------------------------------
-                         slack                                  0.121    
-
-Slack (MET) :             0.139ns  (arrival time - required time)
-  Source:                 GraphicsGUI/water_pix_reg[10]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            MIPS/register_file/regmem_reg[13][6]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.210ns  (logic 0.141ns (67.264%)  route 0.069ns (32.736%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.994ns
-    Source Clock Delay      (SCD):    1.478ns
-    Clock Pessimism Removal (CPR):    0.515ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.559     1.478    GraphicsGUI/clk_IBUF_BUFG
-    SLICE_X40Y70         FDRE                                         r  GraphicsGUI/water_pix_reg[10]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y70         FDRE (Prop_fdre_C_Q)         0.141     1.619 r  GraphicsGUI/water_pix_reg[10]/Q
-                         net (fo=3, routed)           0.069     1.688    MIPS/register_file/waterin[2]
-    SLICE_X40Y70         FDRE                                         r  MIPS/register_file/regmem_reg[13][6]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.829     1.994    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X40Y70         FDRE                                         r  MIPS/register_file/regmem_reg[13][6]/C
-                         clock pessimism             -0.515     1.478    
-    SLICE_X40Y70         FDRE (Hold_fdre_C_D)         0.071     1.549    MIPS/register_file/regmem_reg[13][6]
-  -------------------------------------------------------------------
-                         required time                         -1.549    
-                         arrival time                           1.688    
-  -------------------------------------------------------------------
-                         slack                                  0.139    
-
-Slack (MET) :             0.139ns  (arrival time - required time)
-  Source:                 MIPS/register_file/regmem_reg[14][0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            GraphicsGUI/COLOR_IMAGE_OUT_reg_1664_1727_0_2/RAMA/I
-                            (rising edge-triggered cell RAMD64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.543ns  (logic 0.164ns (30.193%)  route 0.379ns (69.807%))
+  Data Path Delay:        0.396ns  (logic 0.141ns (35.583%)  route 0.255ns (64.417%))
   Logic Levels:           0  
   Clock Path Skew:        0.257ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.983ns
-    Source Clock Delay      (SCD):    1.475ns
+    Destination Clock Delay (DCD):    1.978ns
+    Source Clock Delay      (SCD):    1.470ns
     Clock Pessimism Removal (CPR):    0.250ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1379,12 +1129,12 @@ Slack (MET) :             0.139ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.556     1.475    MIPS/register_file/clk_IBUF_BUFG
-    SLICE_X46Y71         FDRE                                         r  MIPS/register_file/regmem_reg[14][0]/C
+                         net (fo=1103, routed)        0.551     1.470    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X51Y119        FDSE                                         r  GraphicsGUI/image_pix_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X46Y71         FDRE (Prop_fdre_C_Q)         0.164     1.639 r  MIPS/register_file/regmem_reg[14][0]/Q
-                         net (fo=66, routed)          0.379     2.019    GraphicsGUI/COLOR_IMAGE_OUT_reg_1664_1727_0_2/DIA
-    SLICE_X54Y75         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1664_1727_0_2/RAMA/I
+    SLICE_X51Y119        FDSE (Prop_fdse_C_Q)         0.141     1.611 r  GraphicsGUI/image_pix_reg[10]/Q
+                         net (fo=1, routed)           0.255     1.867    MIPS/register_file/imagein[7]
+    SLICE_X52Y123        FDRE                                         r  MIPS/register_file/regmem_reg[12][10]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1394,16 +1144,309 @@ Slack (MET) :             0.139ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
-                         net (fo=2127, routed)        0.818     1.983    GraphicsGUI/COLOR_IMAGE_OUT_reg_1664_1727_0_2/WCLK
-    SLICE_X54Y75         RAMD64E                                      r  GraphicsGUI/COLOR_IMAGE_OUT_reg_1664_1727_0_2/RAMA/CLK
-                         clock pessimism             -0.250     1.732    
-    SLICE_X54Y75         RAMD64E (Hold_ramd64e_CLK_I)
-                                                      0.147     1.879    GraphicsGUI/COLOR_IMAGE_OUT_reg_1664_1727_0_2/RAMA
+                         net (fo=1103, routed)        0.812     1.978    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X52Y123        FDRE                                         r  MIPS/register_file/regmem_reg[12][10]/C
+                         clock pessimism             -0.250     1.727    
+    SLICE_X52Y123        FDRE (Hold_fdre_C_D)         0.070     1.797    MIPS/register_file/regmem_reg[12][10]
   -------------------------------------------------------------------
-                         required time                         -1.879    
-                         arrival time                           2.019    
+                         required time                         -1.797    
+                         arrival time                           1.867    
   -------------------------------------------------------------------
-                         slack                                  0.139    
+                         slack                                  0.069    
+
+Slack (MET) :             0.160ns  (arrival time - required time)
+  Source:                 GraphicsGUI/image_pix_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/register_file/regmem_reg[12][3]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.220ns  (logic 0.164ns (74.580%)  route 0.056ns (25.420%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.981ns
+    Source Clock Delay      (SCD):    1.467ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.548     1.467    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X54Y121        FDRE                                         r  GraphicsGUI/image_pix_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X54Y121        FDRE (Prop_fdre_C_Q)         0.164     1.631 r  GraphicsGUI/image_pix_reg[3]/Q
+                         net (fo=1, routed)           0.056     1.687    MIPS/register_file/imagein[3]
+    SLICE_X54Y121        FDRE                                         r  MIPS/register_file/regmem_reg[12][3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.816     1.981    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X54Y121        FDRE                                         r  MIPS/register_file/regmem_reg[12][3]/C
+                         clock pessimism             -0.513     1.467    
+    SLICE_X54Y121        FDRE (Hold_fdre_C_D)         0.060     1.527    MIPS/register_file/regmem_reg[12][3]
+  -------------------------------------------------------------------
+                         required time                         -1.527    
+                         arrival time                           1.687    
+  -------------------------------------------------------------------
+                         slack                                  0.160    
+
+Slack (MET) :             0.183ns  (arrival time - required time)
+  Source:                 GraphicsGUI/water_pix_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/register_file/regmem_reg[13][4]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.515ns  (logic 0.141ns (27.372%)  route 0.374ns (72.628%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.257ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.977ns
+    Source Clock Delay      (SCD):    1.469ns
+    Clock Pessimism Removal (CPR):    0.250ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.550     1.469    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X40Y123        FDRE                                         r  GraphicsGUI/water_pix_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y123        FDRE (Prop_fdre_C_Q)         0.141     1.610 r  GraphicsGUI/water_pix_reg[8]/Q
+                         net (fo=3, routed)           0.374     1.985    MIPS/register_file/waterin[0]
+    SLICE_X55Y125        FDRE                                         r  MIPS/register_file/regmem_reg[13][4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.811     1.977    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X55Y125        FDRE                                         r  MIPS/register_file/regmem_reg[13][4]/C
+                         clock pessimism             -0.250     1.726    
+    SLICE_X55Y125        FDRE (Hold_fdre_C_D)         0.075     1.801    MIPS/register_file/regmem_reg[13][4]
+  -------------------------------------------------------------------
+                         required time                         -1.801    
+                         arrival time                           1.985    
+  -------------------------------------------------------------------
+                         slack                                  0.183    
+
+Slack (MET) :             0.205ns  (arrival time - required time)
+  Source:                 GraphicsGUI/image_pix_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/register_file/regmem_reg[12][0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.286ns  (logic 0.141ns (49.277%)  route 0.145ns (50.723%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.011ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.981ns
+    Source Clock Delay      (SCD):    1.469ns
+    Clock Pessimism Removal (CPR):    0.500ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.550     1.469    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X47Y121        FDSE                                         r  GraphicsGUI/image_pix_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X47Y121        FDSE (Prop_fdse_C_Q)         0.141     1.610 r  GraphicsGUI/image_pix_reg[0]/Q
+                         net (fo=1, routed)           0.145     1.756    MIPS/register_file/imagein[0]
+    SLICE_X47Y123        FDRE                                         r  MIPS/register_file/regmem_reg[12][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.816     1.981    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X47Y123        FDRE                                         r  MIPS/register_file/regmem_reg[12][0]/C
+                         clock pessimism             -0.500     1.480    
+    SLICE_X47Y123        FDRE (Hold_fdre_C_D)         0.070     1.550    MIPS/register_file/regmem_reg[12][0]
+  -------------------------------------------------------------------
+                         required time                         -1.550    
+                         arrival time                           1.756    
+  -------------------------------------------------------------------
+                         slack                                  0.205    
+
+Slack (MET) :             0.211ns  (arrival time - required time)
+  Source:                 GraphicsGUI/water_pix_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/register_file/regmem_reg[13][1]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.540ns  (logic 0.141ns (26.128%)  route 0.399ns (73.872%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.257ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.977ns
+    Source Clock Delay      (SCD):    1.469ns
+    Clock Pessimism Removal (CPR):    0.250ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.550     1.469    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X40Y123        FDRE                                         r  GraphicsGUI/water_pix_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y123        FDRE (Prop_fdre_C_Q)         0.141     1.610 r  GraphicsGUI/water_pix_reg[9]/Q
+                         net (fo=3, routed)           0.399     2.009    MIPS/register_file/waterin[1]
+    SLICE_X55Y125        FDRE                                         r  MIPS/register_file/regmem_reg[13][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.811     1.977    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X55Y125        FDRE                                         r  MIPS/register_file/regmem_reg[13][1]/C
+                         clock pessimism             -0.250     1.726    
+    SLICE_X55Y125        FDRE (Hold_fdre_C_D)         0.072     1.798    MIPS/register_file/regmem_reg[13][1]
+  -------------------------------------------------------------------
+                         required time                         -1.798    
+                         arrival time                           2.009    
+  -------------------------------------------------------------------
+                         slack                                  0.211    
+
+Slack (MET) :             0.230ns  (arrival time - required time)
+  Source:                 GraphicsGUI/water_pix_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/register_file/regmem_reg[13][0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.331ns  (logic 0.141ns (42.560%)  route 0.190ns (57.440%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.031ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.980ns
+    Source Clock Delay      (SCD):    1.469ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.550     1.469    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X40Y123        FDRE                                         r  GraphicsGUI/water_pix_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y123        FDRE (Prop_fdre_C_Q)         0.141     1.610 r  GraphicsGUI/water_pix_reg[8]/Q
+                         net (fo=3, routed)           0.190     1.801    MIPS/register_file/waterin[0]
+    SLICE_X47Y124        FDRE                                         r  MIPS/register_file/regmem_reg[13][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.815     1.980    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X47Y124        FDRE                                         r  MIPS/register_file/regmem_reg[13][0]/C
+                         clock pessimism             -0.479     1.500    
+    SLICE_X47Y124        FDRE (Hold_fdre_C_D)         0.070     1.570    MIPS/register_file/regmem_reg[13][0]
+  -------------------------------------------------------------------
+                         required time                         -1.570    
+                         arrival time                           1.801    
+  -------------------------------------------------------------------
+                         slack                                  0.230    
+
+Slack (MET) :             0.247ns  (arrival time - required time)
+  Source:                 GraphicsGUI/water_pix_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MIPS/register_file/regmem_reg[13][7]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.579ns  (logic 0.141ns (24.349%)  route 0.438ns (75.651%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.262ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.984ns
+    Source Clock Delay      (SCD):    1.471ns
+    Clock Pessimism Removal (CPR):    0.250ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.552     1.471    GraphicsGUI/clk_IBUF_BUFG
+    SLICE_X37Y123        FDRE                                         r  GraphicsGUI/water_pix_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X37Y123        FDRE (Prop_fdre_C_Q)         0.141     1.612 r  GraphicsGUI/water_pix_reg[11]/Q
+                         net (fo=3, routed)           0.438     2.051    MIPS/register_file/waterin[3]
+    SLICE_X55Y131        FDRE                                         r  MIPS/register_file/regmem_reg[13][7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1103, routed)        0.818     1.984    MIPS/register_file/clk_IBUF_BUFG
+    SLICE_X55Y131        FDRE                                         r  MIPS/register_file/regmem_reg[13][7]/C
+                         clock pessimism             -0.250     1.733    
+    SLICE_X55Y131        FDRE (Hold_fdre_C_D)         0.070     1.803    MIPS/register_file/regmem_reg[13][7]
+  -------------------------------------------------------------------
+                         required time                         -1.803    
+                         arrival time                           2.051    
+  -------------------------------------------------------------------
+                         slack                                  0.247    
 
 
 
@@ -1416,37 +1459,37 @@ Waveform(ns):       { 0.000 5.000 }
 Period(ns):         10.000
 Sources:            { clk }
 
-Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
-Min Period        n/a     BUFG/I       n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  clk_IBUF_BUFG_inst/I
-Min Period        n/a     FDRE/C       n/a            1.000         10.000      9.000      SLICE_X31Y63    MIPS/register_file/regmem_reg[15][17]/C
-Min Period        n/a     FDRE/C       n/a            1.000         10.000      9.000      SLICE_X44Y51    MIPS/register_file/regmem_reg[15][18]/C
-Min Period        n/a     FDRE/C       n/a            1.000         10.000      9.000      SLICE_X32Y51    MIPS/register_file/regmem_reg[15][19]/C
-Min Period        n/a     FDRE/C       n/a            1.000         10.000      9.000      SLICE_X34Y65    MIPS/register_file/regmem_reg[15][1]/C
-Min Period        n/a     FDRE/C       n/a            1.000         10.000      9.000      SLICE_X38Y56    MIPS/register_file/regmem_reg[15][20]/C
-Min Period        n/a     FDRE/C       n/a            1.000         10.000      9.000      SLICE_X33Y58    MIPS/register_file/regmem_reg[15][21]/C
-Min Period        n/a     FDRE/C       n/a            1.000         10.000      9.000      SLICE_X34Y65    MIPS/register_file/regmem_reg[15][22]/C
-Min Period        n/a     FDRE/C       n/a            1.000         10.000      9.000      SLICE_X30Y66    MIPS/register_file/regmem_reg[15][23]/C
-Min Period        n/a     FDRE/C       n/a            1.000         10.000      9.000      SLICE_X34Y68    MIPS/register_file/regmem_reg[15][24]/C
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X56Y91    GraphicsGUI/COLOR_IMAGE_OUT_reg_2944_3007_9_11/RAMA/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X56Y91    GraphicsGUI/COLOR_IMAGE_OUT_reg_2944_3007_9_11/RAMB/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X56Y91    GraphicsGUI/COLOR_IMAGE_OUT_reg_2944_3007_9_11/RAMC/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X56Y91    GraphicsGUI/COLOR_IMAGE_OUT_reg_2944_3007_9_11/RAMD/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X62Y85    GraphicsGUI/COLOR_IMAGE_OUT_reg_832_895_3_5/RAMA/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X62Y85    GraphicsGUI/COLOR_IMAGE_OUT_reg_832_895_3_5/RAMB/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X62Y85    GraphicsGUI/COLOR_IMAGE_OUT_reg_832_895_3_5/RAMC/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X62Y85    GraphicsGUI/COLOR_IMAGE_OUT_reg_832_895_3_5/RAMD/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X46Y83    GraphicsGUI/COLOR_IMAGE_OUT_reg_1024_1087_6_8/RAMA/CLK
-Low Pulse Width   Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X46Y83    GraphicsGUI/COLOR_IMAGE_OUT_reg_1024_1087_6_8/RAMB/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X56Y99    GraphicsGUI/COLOR_IMAGE_OUT_reg_2496_2559_0_2/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X56Y99    GraphicsGUI/COLOR_IMAGE_OUT_reg_2496_2559_0_2/RAMB/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X56Y99    GraphicsGUI/COLOR_IMAGE_OUT_reg_2496_2559_0_2/RAMC/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X56Y99    GraphicsGUI/COLOR_IMAGE_OUT_reg_2496_2559_0_2/RAMD/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X60Y102   GraphicsGUI/COLOR_IMAGE_OUT_reg_3456_3519_6_8/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X60Y102   GraphicsGUI/COLOR_IMAGE_OUT_reg_3456_3519_6_8/RAMB/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X60Y102   GraphicsGUI/COLOR_IMAGE_OUT_reg_3456_3519_6_8/RAMC/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X62Y87    GraphicsGUI/COLOR_IMAGE_OUT_reg_0_63_3_5/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X62Y87    GraphicsGUI/COLOR_IMAGE_OUT_reg_0_63_3_5/RAMB/CLK
-High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X62Y87    GraphicsGUI/COLOR_IMAGE_OUT_reg_0_63_3_5/RAMC/CLK
+Check Type        Corner  Lib Pin     Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     BUFG/I      n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  clk_IBUF_BUFG_inst/I
+Min Period        n/a     FDRE/C      n/a            1.000         10.000      9.000      SLICE_X34Y135   MIPS/register_file/regmem_reg[14][28]/C
+Min Period        n/a     FDRE/C      n/a            1.000         10.000      9.000      SLICE_X36Y126   MIPS/register_file/regmem_reg[14][29]/C
+Min Period        n/a     FDRE/C      n/a            1.000         10.000      9.000      SLICE_X48Y124   MIPS/register_file/regmem_reg[14][2]/C
+Min Period        n/a     FDRE/C      n/a            1.000         10.000      9.000      SLICE_X34Y135   MIPS/register_file/regmem_reg[14][30]/C
+Min Period        n/a     FDRE/C      n/a            1.000         10.000      9.000      SLICE_X33Y129   MIPS/register_file/regmem_reg[14][31]/C
+Min Period        n/a     FDRE/C      n/a            1.000         10.000      9.000      SLICE_X54Y127   MIPS/register_file/regmem_reg[14][3]/C
+Min Period        n/a     FDRE/C      n/a            1.000         10.000      9.000      SLICE_X56Y125   MIPS/register_file/regmem_reg[14][4]/C
+Min Period        n/a     FDRE/C      n/a            1.000         10.000      9.000      SLICE_X56Y125   MIPS/register_file/regmem_reg[14][5]/C
+Min Period        n/a     FDRE/C      n/a            1.000         10.000      9.000      SLICE_X48Y124   MIPS/register_file/regmem_reg[14][6]/C
+Low Pulse Width   Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X42Y137   MIPS/data_mem/memdata_reg_0_31_0_0__15/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X42Y137   MIPS/data_mem/memdata_reg_0_31_0_0__16/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X42Y137   MIPS/data_mem/memdata_reg_0_31_0_0__17/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X42Y137   MIPS/data_mem/memdata_reg_0_31_0_0__18/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X42Y135   MIPS/data_mem/memdata_reg_0_31_0_0__19/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X42Y135   MIPS/data_mem/memdata_reg_0_31_0_0__2/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X42Y135   MIPS/data_mem/memdata_reg_0_31_0_0__20/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X42Y135   MIPS/data_mem/memdata_reg_0_31_0_0__21/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y132   MIPS/data_mem/memdata_reg_0_31_0_0__1/SP/CLK
+Low Pulse Width   Fast    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y132   MIPS/data_mem/memdata_reg_0_31_0_0__1/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y132   MIPS/data_mem/memdata_reg_0_31_0_0__1/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y132   MIPS/data_mem/memdata_reg_0_31_0_0__10/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y137   MIPS/data_mem/memdata_reg_0_31_0_0__11/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y137   MIPS/data_mem/memdata_reg_0_31_0_0__12/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y137   MIPS/data_mem/memdata_reg_0_31_0_0__13/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y137   MIPS/data_mem/memdata_reg_0_31_0_0__14/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y132   MIPS/data_mem/memdata_reg_0_31_0_0/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X50Y132   MIPS/data_mem/memdata_reg_0_31_0_0__0/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X38Y131   MIPS/data_mem/memdata_reg_0_31_0_0__22/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK  n/a            1.250         5.000       3.750      SLICE_X38Y131   MIPS/data_mem/memdata_reg_0_31_0_0__23/SP/CLK
 
 
 

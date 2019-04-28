@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sat Apr 27 22:24:04 2019
+| Date             : Sun Apr 28 08:15:40 2019
 | Host             : void running 64-bit major release  (build 9200)
 | Command          : report_power -file Graphics_power_routed.rpt -pb Graphics_power_summary_routed.pb -rpx Graphics_power_routed.rpx
 | Design           : Graphics
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.114        |
+| Total On-Chip Power (W)  | 0.131        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.017        |
+| Dynamic (W)              | 0.034        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.5         |
-| Junction Temperature (C) | 25.5         |
-| Confidence Level         | Medium       |
+| Max Ambient (C)          | 84.4         |
+| Junction Temperature (C) | 25.6         |
+| Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -52,19 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.005 |        3 |       --- |             --- |
-| Slice Logic              |     0.006 |     6597 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     3098 |     63400 |            4.89 |
-|   F7/F8 Muxes            |    <0.001 |      775 |     63400 |            1.22 |
+| Clocks                   |     0.004 |        3 |       --- |             --- |
+| Slice Logic              |     0.015 |     6692 |       --- |             --- |
+|   LUT as Logic           |     0.014 |     3113 |     63400 |            4.91 |
+|   F7/F8 Muxes            |    <0.001 |      769 |     63400 |            1.21 |
+|   Register               |    <0.001 |     1439 |    126800 |            1.13 |
 |   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
-|   CARRY4                 |    <0.001 |       10 |     15850 |            0.06 |
-|   Register               |    <0.001 |     1351 |    126800 |            1.07 |
+|   CARRY4                 |    <0.001 |       16 |     15850 |            0.10 |
 |   LUT as Distributed RAM |    <0.001 |     1056 |     19000 |            5.56 |
 |   Others                 |     0.000 |       27 |       --- |             --- |
-| Signals                  |     0.005 |     4646 |       --- |             --- |
+| Signals                  |     0.015 |     4751 |       --- |             --- |
 | I/O                      |    <0.001 |       17 |       210 |            8.10 |
 | Static Power             |     0.097 |          |           |                 |
-| Total                    |     0.114 |          |           |                 |
+| Total                    |     0.131 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.032 |       0.017 |      0.015 |
+| Vccint    |       1.000 |     0.049 |       0.034 |      0.015 |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -97,12 +97,12 @@ Table of Contents
 | User Input Data             | Confidence | Details                                               | Action                                                                                                             |
 +-----------------------------+------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | Design implementation state | High       | Design is routed                                      |                                                                                                                    |
-| Clock nodes activity        | Medium     | More than 5% of clocks are missing user specification | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
 | I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
 | Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
 | Device models               | High       | Device models are Production                          |                                                                                                                    |
 |                             |            |                                                       |                                                                                                                    |
-| Overall confidence level    | Medium     |                                                       |                                                                                                                    |
+| Overall confidence level    | Low        |                                                       |                                                                                                                    |
 +-----------------------------+------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 
@@ -143,13 +143,13 @@ Table of Contents
 +-------------------+-----------+
 | Name              | Power (W) |
 +-------------------+-----------+
-| Graphics          |     0.017 |
-|   GraphicsGUI     |     0.014 |
+| Graphics          |     0.034 |
+|   GraphicsGUI     |     0.029 |
 |     VGA           |     0.004 |
 |       HorzPix     |     0.003 |
 |       VertPix     |     0.001 |
-|   MIPS            |     0.003 |
-|     register_file |     0.003 |
+|   MIPS            |     0.004 |
+|     register_file |     0.004 |
 +-------------------+-----------+
 
 

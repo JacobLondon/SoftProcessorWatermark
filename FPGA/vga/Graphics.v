@@ -12,14 +12,16 @@ module Graphics(
     wire [11:0] regout_pix;
     wire [11:0] image_pix;
     wire [11:0] water_pix;
-    wire [11:0] index;
+    wire waiting, done;
     
     Processor MIPS(
         .clk(clk),
         .regout_pix(regout_pix),
         .image_pix(image_pix),
         .water_pix(water_pix),
-        .index(index));
+        .waiting(waiting),
+        .done(done)
+        );
     
     GUI GraphicsGUI(
         .CLK(clk),
@@ -31,7 +33,8 @@ module Graphics(
         .regout(regout_pix),
         .image_pix(image_pix),
         .water_pix(water_pix),
-        .index(index)
+        .waiting(waiting),
+        .done(done)
         );
     
     

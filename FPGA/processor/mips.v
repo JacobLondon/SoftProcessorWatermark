@@ -1,12 +1,13 @@
 `timescale 1ns / 1ps
 
 //module Processor;
-module Processor(clk, regout_pix, image_pix, water_pix, index);
+module Processor(clk, regout_pix, image_pix, water_pix, waiting, done);
 input clk;
 input [11:0] image_pix;
 input [11:0] water_pix;
+input waiting;
+output done;
 output [11:0] regout_pix;
-output [11:0] index;
 
 reg [31:0] in1;
 reg [31:0] in2;
@@ -50,7 +51,6 @@ end*/
 assign imagein = image_pix;
 assign waterin = water_pix;
 assign regout_pix = regout[11:0];
-assign index = counter;
 
 // generate a clock waveform
 //Clock CLK(clk);
@@ -58,7 +58,7 @@ assign index = counter;
 PC pc_(pc, in, clk);
 PC_ALU pc_alu(newpc, pc, extendaddr, chksignal);
 // memory for registers, instructions, and data
-RegisterFile register_file(rw, rs, rt, Rs, Rt, addr3, data3, clk, regout, imagein, waterin, counter);
+RegisterFile register_file(rw, rs, rt, Rs, Rt, addr3, data3, clk, regout, imagein, waterin, waiting, done);
 InstructionMemory inst_mem(inst, pc, clk);
 DataMemory data_mem(opcode, Rt, address, clk, out);
 // split instructions based on R, I, J type

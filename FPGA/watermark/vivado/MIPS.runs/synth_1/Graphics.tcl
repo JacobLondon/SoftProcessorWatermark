@@ -23,34 +23,34 @@ create_project -in_memory -part xc7a100tcsg324-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.cache/wt [current_project]
-set_property parent.project_path C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/watermark/vivado/MIPS.cache/wt [current_project]
+set_property parent.project_path C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/watermark/vivado/MIPS.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/MIPS.cache/ip [current_project]
+set_property ip_output_repo c:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/watermark/vivado/MIPS.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_mem {
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/water2.mem
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/water1.mem
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/image2.mem
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/image1.mem
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/vga/water2.mem
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/vga/water1.mem
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/vga/image2.mem
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/vga/image1.mem
 }
 read_verilog -library xil_defaultlib {
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/GUI.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/PixCounter.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/VGAInterface.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/alu.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/arithmetic.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/counter.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/data_memory.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/inst_memory.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/logic.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/mips.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/pc.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/register_file.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/signextend.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/processor/splitter.v
-  C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/vga/Graphics.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/vga/GUI.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/vga/PixCounter.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/vga/VGAInterface.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/alu.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/arithmetic.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/vga/counter.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/data_memory.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/inst_memory.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/logic.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/mips.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/pc.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/register_file.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/signextend.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/processor/splitter.v
+  C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/vga/Graphics.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -60,8 +60,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc
-set_property used_in_implementation false [get_files C:/Users/jelon/Documents/Workspaces/School/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc]
+read_xdc C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc
+set_property used_in_implementation false [get_files C:/Users/jelon/Documents/Workspaces/School/water2/ImageWatermark/FPGA/watermark/vivado/Nexys4DDR_Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

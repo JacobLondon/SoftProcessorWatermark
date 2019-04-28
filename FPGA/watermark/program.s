@@ -10,6 +10,7 @@ main:
         li $t4, 0xFFF       # image pixel
         li $t5, 0xFFF       # water pixel
         li $t6, 0       # regout pixel
+        li $t7, 0       # done when 1
 
         # temp hold the individual vals
         li $s0, 0x0       # image R, G, B temp
@@ -21,6 +22,7 @@ main:
         li $s4, 0x0000000F      # mask for B
 
         li $s5, 0       # temp hold a result
+        li $s6, 0       # wait while this is 0
 
 
         # program
@@ -29,6 +31,7 @@ main:
 Loop:
         # reset the pixel's value to black
         sub $t6, $t6, $t6       # clear output to 0
+        sub $t7, $t7, $t7       # clear done to 0
 
         # get R pixel
         srl $s0, $t4, 8         # image R
@@ -64,16 +67,12 @@ Loop:
         or $t6, $t6, $s5
 
 
-        # increment then check if counter has reached its max value
-        add $t3, $t3, $t1               # counter = counter + 1
-        beq $t3, $t2, ResetCounter      # jump to ResetCounter if counter == 4095
-
-        bne $t0, $t1, Loop      # loop again if not resetting the counter
-
-ResetCounter:
-        sub $t3, $t3, $t3       # reset counter to zero
-        bne $t0, $t1, Loop      # jump back to loop
-
+        # say done and wait for the signal
+        add $t7, $t7, $t1       # done == 1
+Wait:
+        beq $s6, $t0, Wait      # branch while wait == 0
+        bne $t0, $t1, Loop      # loop again
+        
 
         # return to caller
         jr $ra

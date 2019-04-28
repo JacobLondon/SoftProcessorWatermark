@@ -10,13 +10,15 @@ module GUI(
     regout,
     image_pix,
     water_pix,
-    index
+    waiting,
+    done
     );
 
     input CLK;
     input image_choice, water_choice;
     input [11:0] regout;
-    input [11:0] index;
+    input done;
+    output reg waiting;
     output reg [11:0] image_pix;
     output reg [11:0] water_pix;
     output HS, VS;
@@ -46,12 +48,6 @@ module GUI(
     reg [11:0] COLOR_IMAGE4 [0:Size - 1];       // water2.mem
     reg [11:0] COLOR_IMAGE_OUT [0:Size - 1];    // output watermarked image
     
-    wire [11:0] selected_image_pix;
-    wire [11:0] selected_water_pix;
-    
-    // test area to fill with what is in register 12
-    wire [11:0] counter;
-    assign counter = index;
     
     // get the selected pixel for image/watermark
     always @(posedge CLK) begin
@@ -70,9 +66,23 @@ module GUI(
         end
     end
     
-    always @(posedge CLK) begin
+    reg [11:0] counter = 0;
+    always @(posedge done) begin
+        waiting = 0;
         COLOR_IMAGE_OUT[counter] = regout;
+        counter = counter + 1;
+        waiting = 1;
+        waiting = 0;
     end
+    
+    /*always @(posedge CLK) begin
+        if(image_choice)
+            COLOR_IMAGE_OUT[counter] = 12'hF00;
+        else
+            COLOR_IMAGE_OUT[counter] = 12'h0F0;
+            
+        counter = counter + 1;
+    end*/
     
     wire [12:0] STATE_IMAGE1;
     wire [12:0] STATE_IMAGE2;
