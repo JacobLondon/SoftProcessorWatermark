@@ -21,10 +21,6 @@ Slides: https://docs.google.com/presentation/d/1RRghf2R7uE7MKgTz-8tXAMK0WJGQOxzP
 * Switch J15 controls which image is selected
 * Switch L16 controls which watermark is selected
 
-## Additional Information
-* Infos: https://docs.google.com/document/d/1QwETkBvYuM0Yl76SCGv7ZICafdOZu8s39XU7XoMVrJs/edit?usp=sharing
-* Paper: https://docs.google.com/document/d/1GC-dp1_2LBRvRK9D-Qm_UGnKsI6Cl1z8ytL7r9njO7Y/edit?usp=sharing
-
 # New Images
 1. Open ImageWatermark/Images/image_convert.m in MATLAB
 2. Change the file input name and the destination name
