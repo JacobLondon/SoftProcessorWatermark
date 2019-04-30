@@ -16,7 +16,7 @@ The watermark will be applied on the original where the alpha channel is not cle
 
 # open original and watermark with rgba
 original = cv2.imread('image2.png', cv2.IMREAD_UNCHANGED)
-watermark = cv2.imread('image3.png', cv2.IMREAD_UNCHANGED)
+watermark = cv2.imread('watermark2.png', cv2.IMREAD_UNCHANGED)
 # copy the original to not modify it for the output
 output = copy.deepcopy(original)
 
