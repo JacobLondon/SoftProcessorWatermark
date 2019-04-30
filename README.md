@@ -1,2 +1,34 @@
 # Image Watermark
 An image watermarking tool designed to be run on a Nexys FPGA board while utilizing a softcore 32-bit MIPS processor. It outputs the watermarked image to VGA.
+
+# How To Run
+1. Run Vivado 2018.3 (or greater)
+2. Open project -> ImageWatermark/FPGA/watermark/vivado/MIPS.xpr
+3. Select -> Open Hardware Manager
+4. Select -> Connect
+5. Select -> Program Device
+
+## Controls
+* Connect FPGA's VGA port to a monitor
+* Switch J15 controls which image is selected
+* Switch L16 controls which watermark is selected
+
+## New Images
+1. Open ImageWatermark/Images/image_convert.m in MATLAB
+2. Change the file input name and the destination name
+3. Open project -> ImageWatermark/FPGA/watermark/vivado/MIPS.xpr
+4. Add your MATLAB generated *.mem file to the project
+5. Other *.mem files are located -> ImageWatermark/FPGA/vga
+
+## New Programs
+1. To create custom programs, design MIPS assembly to run in SPIM or QtSPIM
+2. Test code is located -> ImageWatermark/FPGA/processor/setup
+3. Convert your program to hexadecimal (http://www.kurtm.net/mipsasm/index.cgi)
+4. Paste the hexadecimal code between a 'begin' and 'end' statement (see text files under /setup)
+5. Run the following command: "python convert_inst.py <YOUR_FILE_NAME.txt>"
+6. Paste the generated Verilog code -> ImageWatermark/FPGA/processor/inst_memory.v
+
+## Resources
+* http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html
+* http://www.dsi.unive.it/~gasparetto/materials/MIPS_Instruction_Set.pdf
+* https://opencores.org/projects/plasma/opcodes
