@@ -34,6 +34,15 @@ An image watermarking tool designed to be run on a Nexys FPGA board while utiliz
 5. Run the following command: "python convert_inst.py <YOUR_FILE_NAME.txt>"
 6. Paste the generated Verilog code -> ImageWatermark/FPGA/processor/inst_memory.v
 
+# Contributors
+- Jacob London
+- Paul Barrameda
+- Dylan Reyes
+- Tiffany Dewitt
+- Devin Kawamoto-Kindred
+- Dr. Mohamed Aly
+
+
 # Resources
 * http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html
 * http://www.dsi.unive.it/~gasparetto/materials/MIPS_Instruction_Set.pdf
