@@ -13,14 +13,18 @@ An image watermarking tool designed to be run on a Nexys FPGA board while utiliz
 * Switch J15 controls which image is selected
 * Switch L16 controls which watermark is selected
 
-## New Images
+## Additional Information
+* Infos: https://docs.google.com/document/d/1QwETkBvYuM0Yl76SCGv7ZICafdOZu8s39XU7XoMVrJs/edit?usp=sharing
+* Paper: https://docs.google.com/document/d/1GC-dp1_2LBRvRK9D-Qm_UGnKsI6Cl1z8ytL7r9njO7Y/edit?usp=sharing
+
+# New Images
 1. Open ImageWatermark/Images/image_convert.m in MATLAB
 2. Change the file input name and the destination name
 3. Open project -> ImageWatermark/FPGA/watermark/vivado/MIPS.xpr
 4. Add your MATLAB generated *.mem file to the project
 5. Other *.mem files are located -> ImageWatermark/FPGA/vga
 
-## New Programs
+# New Programs
 1. To create custom programs, design MIPS assembly to run in SPIM or QtSPIM
 2. Test code is located -> ImageWatermark/FPGA/processor/setup
 3. Convert your program to hexadecimal (http://www.kurtm.net/mipsasm/index.cgi)
@@ -28,7 +32,7 @@ An image watermarking tool designed to be run on a Nexys FPGA board while utiliz
 5. Run the following command: "python convert_inst.py <YOUR_FILE_NAME.txt>"
 6. Paste the generated Verilog code -> ImageWatermark/FPGA/processor/inst_memory.v
 
-## Resources
+# Resources
 * http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html
 * http://www.dsi.unive.it/~gasparetto/materials/MIPS_Instruction_Set.pdf
 * https://opencores.org/projects/plasma/opcodes
