@@ -3,6 +3,12 @@ An image watermarking tool designed to be run on a Nexys FPGA board while utiliz
 
 <img src="https://user-images.githubusercontent.com/13097797/56936977-4cb0ff80-6aaf-11e9-8b35-b0ab062ac132.png" />
 
+# Links
+
+Report: https://docs.google.com/document/d/1GC-dp1_2LBRvRK9D-Qm_UGnKsI6Cl1z8ytL7r9njO7Y/edit?usp=sharing
+
+Slides: https://docs.google.com/presentation/d/1RRghf2R7uE7MKgTz-8tXAMK0WJGQOxzPDTWaPTrblRY/edit?usp=sharing
+
 # How To Run
 1. Run Vivado 2018.3 (or greater)
 2. Open project -> ImageWatermark/FPGA/watermark/vivado/MIPS.xpr
