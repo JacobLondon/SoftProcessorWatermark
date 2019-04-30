@@ -1,6 +1,8 @@
 # Image Watermark
 An image watermarking tool designed to be run on a Nexys FPGA board while utilizing a softcore 32-bit MIPS processor. It outputs the watermarked image to VGA.
 
+<img src="https://user-images.githubusercontent.com/13097797/56936977-4cb0ff80-6aaf-11e9-8b35-b0ab062ac132.png" />
+
 # How To Run
 1. Run Vivado 2018.3 (or greater)
 2. Open project -> ImageWatermark/FPGA/watermark/vivado/MIPS.xpr
