@@ -1,4 +1,4 @@
-# Image Watermark
+# FPGA Softcore Processor Image Watermark to VGA
 An image watermarking tool designed to be run on a Nexys FPGA board while utilizing a softcore 32-bit MIPS processor. It outputs the watermarked image to VGA.
 
 <img src="https://user-images.githubusercontent.com/13097797/56936977-4cb0ff80-6aaf-11e9-8b35-b0ab062ac132.png" />
